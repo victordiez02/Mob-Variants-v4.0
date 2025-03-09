@@ -1,0 +1,81 @@
+// Render controller vindicator
+// q.variant: skin del mob.
+// q.mark_variant: si lleva armadura (1, 2, 3), armadura con bander (4) o no lleva armadura (0).
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.vindicator": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9",
+            "Texture.default10",
+            "Texture.default11",
+            "Texture.default12",
+            "Texture.default13",
+            "Texture.default14",
+            "Texture.default15",
+            "Texture.default16",
+            "Texture.default17",
+            "Texture.default18",
+            "Texture.default19",
+            "Texture.default20",
+            "Texture.default21",
+            "Texture.clown"
+          ]
+        }
+      }
+    },
+    "controller.render.vindicator_armor": {
+      "geometry": "q.variant ? array.xgeosq[q.mark_variant] : (variable.xvar < 40 ? array.xgeos[variable.xvar] : geometry.empty)",
+      "materials": [ { "*": "Material.armor" } ],
+      "textures": [ "q.variant ? array.xskinsq[q.mark_variant] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.armor",
+            "Texture.armor2",
+            "Texture.armor3",
+            "Texture.armor4"
+          ],
+
+          "array.xskinsq": [
+            "Texture.armor",
+            "Texture.armor",
+            "Texture.armor2",
+            "Texture.armor3",
+            "Texture.armor4"
+          ]
+        },
+        "geometries": {
+          "array.xgeos": [
+            "geometry.armor",
+            "geometry.armor",
+            "geometry.armor",
+            "geometry.armor2"
+          ],
+
+          "array.xgeosq": [
+            "geometry.empty",
+            "geometry.armor",
+            "geometry.armor",
+            "geometry.armor",
+            "geometry.armor2"
+          ]
+        }
+      }
+    }
+  }
+}

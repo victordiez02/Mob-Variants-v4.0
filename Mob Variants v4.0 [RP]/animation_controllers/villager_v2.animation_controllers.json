@@ -1,0 +1,76 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.villager.general": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": ["idle"],
+                    "transitions": [{
+                            "walking": "query.ground_speed"
+                        },
+                        {
+                            "panicking": "query.is_avoiding_mobs"
+                        },
+                        {
+                            "get_in_bed": "query.is_sleeping"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "walking": {
+                    "animations": [
+                        { "walking": "query.modified_move_speed" }
+                    ],
+                    "transitions": [{
+                            "default": "!query.ground_speed"
+                        },
+                        {
+                            "panicking": "query.is_avoiding_mobs"
+                        },
+                        {
+                            "get_in_bed": "query.is_sleeping"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "panicking": {
+                    "animations": [
+                        { "panic": "query.modified_move_speed" }
+                    ],
+                    "transitions": [{
+                            "default": "!query.ground_speed && !query.is_avoiding_mobs && !query.ground_speed"
+                        },
+                        {
+                            "walking": "query.ground_speed && !query.is_avoiding_mobs"
+                        },
+                        {
+                            "get_in_bed": "query.is_sleeping"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "get_in_bed": {
+                    "animations": [
+                        "get_in_bed"
+                    ],
+                    "transitions": [{
+                            "default": "!query.is_sleeping && !query.ground_speed"
+                        },
+                        {
+                            "walking": "!query.is_sleeping && query.ground_speed"
+                        },
+                        {
+                            "panicking": "!query.is_sleeping && !query.is_avoiding_mobs"
+                        }
+                    ],
+                    "blend_transition": 0.1,
+                    "blend_via_shortest_path": true
+                }
+            }
+        }
+    }
+}

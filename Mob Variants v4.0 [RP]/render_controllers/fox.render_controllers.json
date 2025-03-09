@@ -1,0 +1,35 @@
+// Render controller fox
+// q.variant: puede ser zorro normal (3), zorro artico (4), ornitorrico (5) o perry el ornitorrinco (6).
+// Maldito seas, Perry el Ornitorrinco.
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.fox": {
+      "arrays": {
+        "textures": {
+          "Array.skinsq": [
+            "Texture.red",
+            "Texture.arctic",
+            "Texture.perry",
+            "Texture.perry"
+          ]
+        },
+        "geometries": {
+          "array.geosq": [
+            "Geometry.default",
+            "Geometry.default",
+            "Geometry.platypus",
+            "Geometry.perry"
+          ]
+        }
+      },
+      "geometry": "q.variant > 2 ? array.geosq[q.variant - 3] : (variable.xvar < 5 ? Geometry.perry : (variable.xvar < 20 ? Geometry.platypus : Geometry.default))",
+      "part_visibility": [
+        { "leg*": "!query.is_sleeping" }
+      ],
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant > 2 ? Array.skinsq[q.variant - 3] : (variable.xvar < 20 ? Texture.perry : Array.skinsq[query.variant])" ]
+    }
+  }
+}

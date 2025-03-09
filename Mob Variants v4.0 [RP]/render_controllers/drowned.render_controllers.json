@@ -1,0 +1,38 @@
+// Render controller drowned
+// q.variant: skin del mob.
+// q.mark_variant: si tiene tridente clavado (1) o si no (0).
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.drowned": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5"
+          ]
+        }
+      }
+    },
+    "controller.render.drowned_trident": {
+      "geometry": "!query.is_baby ? (q.variant ? array.geosq[q.mark_variant] : (variable.yvar < 20 ? geometry.trident : geometry.empty)) : geometry.empty",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "texture.trident" ],
+      "arrays": {
+        "geometries": {
+          "array.geosq": [
+            "geometry.empty",
+            "geometry.trident"
+          ]
+        }
+      }
+    }
+  }
+}

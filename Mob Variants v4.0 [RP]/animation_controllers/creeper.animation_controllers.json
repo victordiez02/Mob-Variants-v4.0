@@ -1,0 +1,38 @@
+{
+	"format_version" : "1.10.0",
+	"animation_controllers" : {
+		"controller.animation.creeper.general" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "idle" ],
+					"transitions": [
+						{
+							"walking": "query.ground_speed > 0.2"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				},
+				"walking" : {
+					"animations" : [ "walk" ],
+					"transitions": [
+						{
+							"default": "query.ground_speed < 0.2"
+						}
+					],
+					"blend_transition": 0.3,
+					"blend_via_shortest_path": true
+				}
+			}
+		},
+		"controller.animation.creeper.swelling" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+					"animations" : [ "creeper_swelling" ]
+				}
+			}
+		}
+	}
+}

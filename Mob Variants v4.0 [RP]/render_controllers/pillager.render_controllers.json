@@ -1,0 +1,73 @@
+// Render controller pillager
+// q.variant: skin del mob.
+// q.mark_variant: si lleva casco (1, 2, 3, 4) o si no (0).
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.pillager": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9",
+            "Texture.default10",
+            "Texture.default11",
+            "Texture.default12",
+            "Texture.default13",
+            "Texture.default14",
+            "Texture.default15",
+            "Texture.default16",
+            "Texture.default17",
+            "Texture.default18",
+            "Texture.default19",
+            "Texture.default20",
+            "Texture.default21",
+            "Texture.default22",
+            "Texture.pillager_totem"
+          ]
+        }
+      }
+    },
+    "controller.render.pillager_helmet": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.variant ? array.geosq[q.mark_variant] : (variable.xvar < 60 ? geometry.helmet : geometry.empty)",
+      "materials": [ { "*": "Material.helmet" } ],
+      "textures": [ "q.variant ? array.xskinsq[q.mark_variant] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.helmet",
+            "Texture.helmet2",
+            "Texture.helmet3"
+          ],
+
+          "array.xskinsq": [
+            "Texture.helmet",
+            "Texture.helmet",
+            "Texture.helmet2",
+            "Texture.helmet3"
+          ]
+        },
+        "geometries": {
+          "array.geosq": [
+            "geometry.empty",
+            "geometry.helmet",
+            "geometry.helmet",
+            "geometry.helmet"
+          ]
+        }
+      }
+    }
+  }
+}

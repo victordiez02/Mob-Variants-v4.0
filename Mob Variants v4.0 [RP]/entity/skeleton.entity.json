@@ -1,0 +1,76 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:skeleton",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "enderman",
+        "overlay": "skeleton_clothes"
+      },
+      "textures": {
+        "default": "textures/entity/skeleton/skeleton",
+        "default2": "textures/entity/skeleton/skeleton2",
+        "default3": "textures/entity/skeleton/skeleton3",
+        "default4": "textures/entity/skeleton/skeleton4",
+        "default5": "textures/entity/skeleton/skeleton5",
+        "default6": "textures/entity/skeleton/skeleton6",
+        "default7": "textures/entity/skeleton/skeleton7",
+        "default8": "textures/entity/skeleton/skeleton8",
+        "default9": "textures/entity/skeleton/skeleton9",
+        "default10": "textures/entity/skeleton/skeleton10",
+        "default11": "textures/entity/skeleton/skeleton11",
+        "default12": "textures/entity/skeleton/skeleton12",
+        "default13": "textures/entity/skeleton/skeleton13",
+        "default14": "textures/entity/skeleton/skeleton14",
+        "default15": "textures/entity/skeleton/skeleton15",
+        "overlay": "textures/entity/skeleton/skeleton_overlay",
+        "overlay2": "textures/entity/skeleton/skeleton_overlay2"
+      },
+      "geometry": {
+        "default": "geometry.skeleton",
+        "overlay": "geometry.skeleton.armor",
+        "overlay2": "geometry.skeleton.armor2"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 9
+      },
+      "animations": {
+        "look_at_target": "animation.common.look_at_target",
+        "idle": "animation.skeleton.idle",
+        "walking": "animation.skeleton.walking",
+        "riding": "animation.skeleton.riding",
+        "death": "animation.skeleton.death",
+        "riding_arms_idle": "animation.skeleton.riding_idle_arms",
+        "riding_charging_bow": "animation.skeleton.charging_bow_riding",
+        "has_target": "animation.skeleton.has_target",
+        "general": "controller.animation.skeleton.general",
+        "arms_controller": "controller.animation.arms_controller"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.riding_arms_charging = query.is_riding && query.item_is_charged;",
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;",
+          "variable.wobble = Math.sin(query.swell_amount * 5730) * query.swell_amount * 0.01 + 1.0;",
+          "variable.swelling_scale1 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.4 + 1.0) * variable.wobble;",
+          "variable.swelling_scale2 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.1 + 1.0) / variable.wobble;",
+          "variable.leg_rot = Math.cos(query.modified_distance_moved * 38.17326) * 80.22 * query.modified_move_speed;",
+          "variable.flash = Math.mod(Math.Round(query.swell_amount * 10.0), 2.0);",
+          "variable.xvar = (variable.xvar ?? math.random(0,99));"
+        ],
+        "animate": [
+          {"look_at_target": "query.is_alive"},
+          {"death": "!query.is_alive"},
+          "arms_controller",
+          "general"
+        ]
+      },
+      "render_controllers": [ 
+          "controller.render.skeleton",
+          "controller.render.skeleton_clothes"
+      ],
+      "enable_attachables": true
+    }
+  }
+}

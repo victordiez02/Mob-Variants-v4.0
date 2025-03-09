@@ -1,0 +1,60 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.zombie_leg",
+				"texture_width": 8,
+				"texture_height": 4,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "root_z2",
+					"parent": "bone",
+					"pivot": [0, 0, 4],
+					"rotation": [90, 0, 0]
+				},
+				{
+					"name": "waist_z2",
+					"parent": "root_z2",
+					"pivot": [0, 4, 6]
+				},
+				{
+					"name": "leftLeg_z2",
+					"parent": "waist_z2",
+					"pivot": [1.9, 4, 6],
+					"rotation": [0, 0, -10]
+				},
+				{
+					"name": "bloodl_z2",
+					"parent": "leftLeg_z2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.1, 0.97, 4], "size": [4, 0, 4], "uv": [-4, 0], "mirror": true}
+					]
+				},
+				{
+					"name": "rightLeg_z2",
+					"parent": "waist_z2",
+					"pivot": [-1.9, 4, 6],
+					"rotation": [0, 0, 15]
+				},
+				{
+					"name": "bloodr_z2",
+					"parent": "rightLeg_z2",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-3.9, 0.97, 4], "size": [4, 0, 4], "uv": [-4, 0]}
+					]
+				}
+			]
+		}
+	]
+}

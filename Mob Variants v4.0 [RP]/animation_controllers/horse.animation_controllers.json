@@ -1,0 +1,50 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.horse.v3.general": {
+            "states": {
+                "default": {
+                    "animations": ["tail"],
+                    "transitions": [
+                        {
+                            "running": "query.ground_speed > 3 || (query.has_rider && query.ground_speed > 3)"
+                        },
+                        {
+                            "walking": "query.ground_speed > 0.3 && query.ground_speed < 3"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "walking": {
+                    "animations": [{"walk": "query.modified_move_speed"}],
+                    "transitions": [
+                        {
+                            "running": "query.ground_speed > 3 || (query.has_rider && query.ground_speed > 3)"
+                        },
+                        {
+                            "default": "query.ground_speed < 0.3"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "running": {
+                    "animations": [
+                        {"run": "query.modified_move_speed"}
+                    ],
+                    "transitions": [
+                        {
+                            "walking": "query.ground_speed < 3 && query.ground_speed > 0.3"
+                        },
+                        {
+                            "default": "query.ground_speed < 0.3"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                }
+            }
+        }
+    }
+}

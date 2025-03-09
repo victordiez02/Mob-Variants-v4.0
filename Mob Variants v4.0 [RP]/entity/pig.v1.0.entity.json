@@ -1,0 +1,70 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:pig",
+      "min_engine_version": "1.8.0",
+      "materials": {
+          "default": "entity_alphatest",
+          "glow": "enderman"
+      },
+      "textures": {
+        "default": "textures/entity/pig/pig",
+        "default2": "textures/entity/pig/pig2",
+        "default3": "textures/entity/pig/pig3",
+        "default4": "textures/entity/pig/pig4",
+        "default5": "textures/entity/pig/pig5",
+        "saddled": "textures/entity/pig/pig_saddle",
+        "saddled2": "textures/entity/pig/pig_saddle2",
+        "saddled3": "textures/entity/pig/pig_saddle3",
+        "saddled4": "textures/entity/pig/pig_saddle4",
+        "saddled5": "textures/entity/pig/pig_saddle5",
+        "capibara": "textures/entity/pig/capibara",
+        "capibara_saddle": "textures/entity/pig/capibara_saddle",
+        "snail": "textures/entity/pig/snail",
+        "snail_saddle": "textures/entity/pig/snail_saddle",
+        "gold": "textures/entity/pig/pig_gold",
+        "gold_saddle": "textures/entity/pig/pig_gold_saddle",
+        "chest": "textures/entity/pig/pig_chest",
+        "flower": "textures/entity/iron_golem/iron_golem2"
+      },
+      "geometry": {
+        "default": "geometry.pig",
+        "capibara": "geometry.capibara",
+        "snail": "geometry.snail",
+        "chest": "geometry.pig_chest",
+        "flower": "geometry.pig_flower",
+        "empty": "geometry.zombie_empty"
+      },
+      "animations": {
+        "walk": "animation.pig.walk",
+        "idle": "animation.pig.idle",
+        "blink": "animation.pig.blink",
+        "death": "animation.pig.death",
+        "general": "controller.animation.pig.general",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.pig.baby_transform"
+      },
+      "scripts": {
+        "animate": [
+          "general",
+          "blink",
+          {"look_at_target": "query.is_alive"},
+          {"baby_transform": "query.is_baby" }
+        ],
+        "pre_animation": [
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ]
+      },
+      "render_controllers": [
+          "controller.render.pig",
+          "controller.render.pig_chest",
+          "controller.render.pig_flower"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 2
+      }
+    }
+  }
+}

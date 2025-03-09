@@ -1,0 +1,68 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.arrow_chest_2",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "spine",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "body",
+					"parent": "spine",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "arrow",
+					"parent": "body",
+					"pivot": [-1, 21, 2],
+					"rotation": [-140, 17.5, -47.5],
+					"cubes": [
+						{
+							"origin": [-1, 18.5, -1],
+							"size": [0, 5, 16],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [16, 5]}
+							}
+						},
+						{
+							"origin": [-3.5, 18.5, 14],
+							"size": [5, 5, 0],
+							"uv": {
+								"south": {"uv": [0, 5], "uv_size": [5, 5]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone3",
+					"parent": "arrow",
+					"pivot": [-1, 21, 2],
+					"rotation": [0, 0, 90],
+					"cubes": [
+						{
+							"origin": [-1, 18.5, -1],
+							"size": [0, 5, 16],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [16, 5]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

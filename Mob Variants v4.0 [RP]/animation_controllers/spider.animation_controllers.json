@@ -1,0 +1,96 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.spider.general": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "walking": "query.ground_speed > 0.2"
+                        },
+                        {
+                            "attacking": "variable.attack_time > 0"
+                        }
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true
+                },
+                "walking": {
+                    "animations": [
+                        "walking"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.ground_speed < 0.2"
+                        },
+                        {
+                            "attacking": "variable.attack_time > 0"
+                        }
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true
+                },
+                "attacking": {
+                    "animations": [
+                        "attack"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "query.ground_speed < 0.2 && variable.attack_time == 0 && query.all_animations_finished"
+                        },
+                        {
+                            "walking": "query.ground_speed > 0.2 && variable.attack_time == 0 && query.all_animations_finished"
+                        }
+                    ],
+                    "blend_transition": 0.2,
+                    "blend_via_shortest_path": true
+                }
+            }
+        },
+        "controller.animation.spider.orientation_controller": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "transitions": [
+                        {
+                            "climbing": "query.is_wall_climbing && query.ground_speed > 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "climbing": {
+                    "animations": [
+                        "wall_climbing"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_wall_climbing"
+                        },
+                        {
+                            "upside_down": "query.is_wall_climbing && query.ground_speed < 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                },
+                "upside_down": {
+                    "animations": [
+                        "upside_down"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.is_wall_climbing"
+                        },
+                        {
+                            "climbing": "query.is_wall_climbing && query.ground_speed > 0.2"
+                        }
+                    ],
+                    "blend_transition": 0.3,
+                    "blend_via_shortest_path": true
+                }
+            }
+        }
+    }
+}

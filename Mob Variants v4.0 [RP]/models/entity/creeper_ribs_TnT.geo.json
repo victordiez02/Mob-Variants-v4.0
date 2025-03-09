@@ -1,0 +1,39 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.creeper_ribs_TnT",
+				"texture_width": 24,
+				"texture_height": 12,
+				"visible_bounds_width": 6,
+				"visible_bounds_height": 6,
+				"visible_bounds_offset": [0, 0, 0]
+			},
+			"bones": [
+				{
+					"name": "body",
+					"pivot": [0, 0, 0.75]
+				},
+				{
+					"name": "joint",
+					"parent": "body",
+					"pivot": [0, 6, 0.75]
+				},
+				{
+					"name": "joint2",
+					"parent": "joint",
+					"pivot": [0, 12, 0.75]
+				},
+				{
+					"name": "top_ribs",
+					"parent": "joint2",
+					"pivot": [0, 19.75, 0.04545],
+					"cubes": [
+						{"origin": [-3, 9.5, -3], "size": [6, 6, 6], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

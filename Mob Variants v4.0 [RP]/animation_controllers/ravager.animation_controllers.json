@@ -1,0 +1,125 @@
+  {
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.ravager.root" : {
+			"initial_state" : "default",
+			"states" : {
+				"default" : {
+          "animations" : [
+            "base_pose"
+          ],
+					"transitions" : [
+            { "move_notarget" : "q.modified_move_speed > 0.1 && q.is_on_ground && !q.is_riding && !q.has_target" },
+            { "move_target" : "q.modified_move_speed > 0.1 && q.is_on_ground && !q.is_riding && q.has_target" },
+            { "stunned" : "q.is_stunned" },
+            { "roar" : "q.is_roaring" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.4,
+					"blend_via_shortest_path": true
+        },
+        "idle": {
+          "animations" : [
+            { "idle1": "v.roll == 1" },
+            { "idle2": "v.roll == 2" },
+            { "idle3": "v.roll == 3" }
+          ],
+					"transitions" : [
+            { "default" : "q.has_target || q.is_in_contact_with_water || q.any_animation_finished" },
+            { "move_notarget" : "q.modified_move_speed > 0.1 && !q.has_target" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.1,
+					"blend_via_shortest_path": true
+        },
+        "move_notarget": {
+          "on_entry": [ "v.roll = math.random_integer(1, 5);" ],
+          "animations": [
+            "move_upper_body",
+            "move_lower_body_notarget"
+          ],
+          "transitions": [
+            { "default": "(q.modified_move_speed < 0.1 && v.roll > 3) || (q.modified_move_speed < 0.1 && v.roll <= 3)" },
+            { "move_target": "q.has_target" },
+            { "stunned" : "q.is_stunned" },
+            { "roar" : "q.is_roaring" },
+            { "idle": "!q.has_target && q.modified_move_speed < 0.1 && v.roll <= 3" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.2,
+					"blend_via_shortest_path": true
+        },
+        "move_target": {
+          "on_entry": [ "v.roll = math.random_integer(1, 5);" ],
+          "animations": [
+            "move_upper_body",
+            "move_lower_body_target_front",
+            "move_lower_body_target_back"
+          ],
+          "transitions": [
+            { "default": "(q.modified_move_speed < 0.1 && v.roll > 3) || (q.modified_move_speed < 0.1 && v.roll <= 3 && q.has_target)" },
+            { "idle": "!q.has_target && q.modified_move_speed < 0.1 && v.roll <= 3" },
+            { "stunned" : "q.is_stunned" },
+            { "attack": "q.is_delayed_attacking" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.1,
+					"blend_via_shortest_path": true
+        },
+        "attack": {
+          "on_entry": [ "v.delay = q.life_time;" ],
+          "animations": [
+            "move_lower_body_target_front",
+            "move_lower_body_target_back",
+            "attack"
+          ],
+          "transitions": [
+            { "move_target": "!q.is_delayed_attacking && q.life_time - v.delay >= 0.75" },
+            { "stunned" : "q.is_stunned" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.4,
+					"blend_via_shortest_path": true
+        },
+        "stunned": {
+          "animations": [
+            "stunned",
+            "move_lower_body_notarget"
+          ],
+          "particle_effects" : [
+						{
+							"effect" : "stun_particles",
+							"locator" : "stun"
+						}
+					],
+          "transitions": [
+            { "default": "!q.is_stunned" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.2,
+					"blend_via_shortest_path": true
+        },
+        "roar": {
+          "animations": [
+            "roar",
+            "move_upper_body",
+            "move_lower_body_notarget"
+          ],
+          "transitions": [
+            { "default": "!q.is_roaring" },
+            { "dead": "!q.is_alive" }
+          ],
+          "blend_transition": 0.2,
+					"blend_via_shortest_path": true
+        },
+        "dead": {
+          "on_entry": [ "v.roll = math.random_integer(1, 2);" ],
+          "animations": [
+            { "dead1": "v.roll == 1" },
+            { "dead2": "v.roll == 2" }
+          ]
+        }
+			}
+    }
+  }
+}

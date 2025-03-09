@@ -1,0 +1,109 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:vindicator",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "vindicator",
+        "armor": "enderman"
+      },
+      "geometry": {
+        "default": "geometry.vindicator.v1.8",
+        "empty": "geometry.zombie_empty",
+        "armor": "geometry.vindicator_armor",
+        "armor2": "geometry.vindicator_armor2"
+      },
+      "textures": {
+        "default": "textures/entity/vindicator",
+        "default2": "textures/entity/vindicator/vindicator2",
+        "default3": "textures/entity/vindicator/vindicator3",
+        "default4": "textures/entity/vindicator/vindicator4",
+        "default5": "textures/entity/vindicator/vindicator5",
+        "default6": "textures/entity/vindicator/vindicator6",
+        "default7": "textures/entity/vindicator/vindicator7",
+        "default8": "textures/entity/vindicator/vindicator8",
+        "default9": "textures/entity/vindicator/vindicator9",
+        "default10": "textures/entity/vindicator/vindicator10",
+        "default11": "textures/entity/vindicator/vindicator11",
+        "default12": "textures/entity/vindicator/vindicator12",
+        "default13": "textures/entity/vindicator/vindicator13",
+        "default14": "textures/entity/vindicator/vindicator14",
+        "default15": "textures/entity/vindicator/vindicator15",
+        "default16": "textures/entity/vindicator/vindicator16",
+        "default17": "textures/entity/vindicator/vindicator17",
+        "default18": "textures/entity/vindicator/vindicator18",
+        "default19": "textures/entity/vindicator/vindicator19",
+        "default20": "textures/entity/vindicator/vindicator20",
+        "default21": "textures/entity/vindicator/vindicator21",
+        "clown": "textures/entity/vindicator/vindicator_clown",
+
+        "armor": "textures/entity/vindicator/vindicator_armor",
+        "armor2": "textures/entity/vindicator/vindicator_armor2",
+        "armor3": "textures/entity/vindicator/vindicator_armor3",
+        "armor4": "textures/entity/vindicator/vindicator_armor4"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 25.44666) * query.modified_move_speed) * 57.3;",
+          "variable.tcos1 = (Math.cos(query.modified_distance_moved * 50.89333) * query.modified_move_speed) * 57.3;",
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ],
+        "animate": [
+          { "root": "v.fall == 0" },
+          { "look_at_target": "query.is_alive && v.fall == 0" },
+          { "dead": "!query.is_alive" },
+          "fall"
+        ],
+        "initialize": [
+          "v.roll = math.random_integer(1, 5);",
+          "v.attack_roll = math.random_integer(1, 3);",
+          "v.fall = 0;"
+        ]
+      },
+      "animations": {
+        "root": "controller.animation.vindicator.root",
+        "look_at_target": "animation.common.look_at_target",
+        "base_pose": "animation.vindicator.base_pose",
+        "base_pose_sus": "animation.vindicator.base_pose_sus",
+        "riding.legs": "animation.humanoid.riding.legs",
+        "fall": "controller.animation.mob.fall",
+        "falling_low": "animation.vindicator.falling_low",
+        "falling_trans": "animation.vindicator.falling_trans",
+        "falling_high": "animation.vindicator.falling_high",
+        "land_high": "animation.vindicator.land_high",
+        "land_low": "animation.vindicator.land_low",
+        "idle1": "animation.vindicator.idle1",
+        "idle2": "animation.vindicator.idle2",
+        "idle3": "animation.vindicator.idle3",
+        "idle4": "animation.vindicator.idle4",
+        "move_upper_body": "animation.vindicator.move_upper_body",
+        "move_upper_body_target1": "animation.vindicator.move_upper_body_target1",
+        "move_upper_body_target2": "animation.vindicator.move_upper_body_target2",
+        "move_upper_body_target3": "animation.vindicator.move_upper_body_target3",
+        "move_upper_body_target1_default": "animation.vindicator.move_upper_body_target1_default",
+        "move_upper_body_target2_default": "animation.vindicator.move_upper_body_target2_default",
+        "move_upper_body_target3_default": "animation.vindicator.move_upper_body_target3_default",
+        "move_lower_body": "animation.vindicator.move_lower_body",
+        "attack1": "animation.vindicator.attack1",
+        "attack2": "animation.vindicator.attack2",
+        "attack3": "animation.vindicator.attack3",
+        "celebrate": "animation.vindicator.celebrate",
+        "dead": "animation.custom_death",
+        "dead1": "animation.vindicator.dead1",
+        "dead2": "animation.vindicator.dead2",
+        "dead3": "animation.vindicator.dead3",
+        "dead4": "animation.vindicator.dead4"
+      },
+      "render_controllers": [
+        "controller.render.vindicator",
+        "controller.render.vindicator_armor"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 39
+      },
+      "enable_attachables": true
+    }
+  }
+}

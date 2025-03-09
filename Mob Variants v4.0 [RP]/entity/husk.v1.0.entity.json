@@ -1,0 +1,75 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:husk",
+      "min_engine_version": "1.8.0",
+      "materials": { "default": "zombie" },
+      "textures": {
+        "default": "textures/entity/zombie/husk"
+      },
+      "geometry": {
+        "default": "geometry.zombiev1"
+      },
+      "animations": {
+        "zombie_big_head": "animation.humanoid.big_head",
+        "holding": "animation.zombie.holding",
+        "setup": "animation.zombie.pose",
+        "head_idle": "animation.zombie.head_idle",
+        "head_walk": "animation.zombie.head_walking",
+        "torso_idle": "animation.zombie.torso_idle",
+        "torso_walk": "animation.zombie.torso_walking",
+        "arms_idle": "animation.zombie.arms_idle",
+        "arms_walk": "animation.zombie.arms_walking",
+        "leg_walk": "animation.zombie.legs_walking",
+        "leg_idle": "animation.zombie.legs_idle",
+        "riding_arms": "animation.zombie.riding_arms",
+        "riding_legs": "animation.zombie.riding_legs",
+        "adult_attack": "animation.zombie.attack.adult",
+        "baby_attack": "animation.zombie.attack.baby",
+        "baby_idle": "animation.zombie_baby.idle",
+        "baby_moving": "animation.zombie_baby.running",
+        "swimming_full": "animation.zombie.swimming_full",
+        "swimming_head": "animation.zombie.head_swimming",
+        "swimming_torso": "animation.zombie.torso_swimming",
+        "swimming_legs": "animation.zombie.legs_swimming",
+        "swimming_arms": "animation.zombie.arms_swimming",
+        "head_controller": "controller.animation.zombie.head",
+        "torso_controller": "controller.animation.zombie.torso",
+        "arms_controller": "controller.animation.zombie.arms",
+        "legs_controller": "controller.animation.zombie.legs",
+        "baby_controller": "controller.animation.zombie.baby",
+        "attack_controller": "controller.animation.zombie.attack",
+        "look_at_target": "animation.common.look_at_target",
+        "damage_nearby_mobs": "animation.zombie.damage_nearby_mobs",
+        "brandish_spear": "animation.zombie.brandish_spear",
+        "death": "animation.zombie.death"
+        
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.zombie.attack = variable.attack_time >0 && query.has_target;"
+        ],
+        "animate": [
+          "setup",
+          {"zombie_big_head": "query.is_baby"},
+          {"baby_controller": "query.is_baby && query.health > 0"},
+          {"attack_controller": "query.has_target"},
+          {"head_controller": "query.health > 0"},
+          {"torso_controller":"query.health > 0"},
+          {"arms_controller": "query.health > 0"},
+          {"legs_controller": "query.health > 0"},
+          {"look_at_target":  "query.health > 0"},
+          {"damage_nearby_mobs" : "variable.damage_nearby_mobs"},
+          {"brandish_spear" : "variable.is_brandishing_spear" },
+          {"death":  "!query.is_alive"}
+        ]
+      },
+      "render_controllers": [ "controller.render.husk" ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 28
+      }
+    }
+  }
+}

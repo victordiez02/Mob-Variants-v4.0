@@ -1,0 +1,74 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:ravager",
+      "textures": {
+        "default": "textures/entity/illager/ravager",
+        "default2": "textures/entity/illager/ravager2",
+        "default3": "textures/entity/illager/ravager3",
+        "default4": "textures/entity/illager/ravager4",
+        "default5": "textures/entity/illager/ravager5",
+        "default6": "textures/entity/illager/ravager6",
+        "default7": "textures/entity/illager/ravager7",
+        "default8": "textures/entity/illager/ravager8",
+        "default9": "textures/entity/illager/ravager9"
+      },
+      "materials": {
+        "default": "ravager"
+      },
+      "geometry": {
+        "default": "geometry.ravager"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.tcos0 = (Math.cos(query.modified_distance_moved * 76.34) * query.modified_move_speed) * 57.3;",
+          "variable.tcos1 = (Math.cos(query.modified_distance_moved * 144.68) * query.modified_move_speed) * 57.3;",
+          "variable.tcos2 = (Math.cos(query.modified_distance_moved * 14.31375) * query.modified_move_speed) * 57.3;",
+          "variable.legrightfront = (Math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed) * 57.3;",
+          "variable.legleftfront = (Math.cos((query.modified_distance_moved - 1.5) * 38.17) * query.modified_move_speed) * 57.3;",
+          "variable.legrightback = (Math.cos((query.modified_distance_moved - 3) * 38.17) * query.modified_move_speed) * 57.3;",
+          "variable.legleftback = (Math.cos((query.modified_distance_moved - 4.5) * 38.17) * query.modified_move_speed) * 57.3;",
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+
+        ],
+        "animate": [
+          "root",
+          { "look_at_target": "query.is_alive && !q.is_stunned" },
+          { "dead": "!query.is_alive" }
+        ],
+        "initialize": [
+          "v.roll = math.random_integer(1, 5);"
+        ]
+      },
+      "animations": {
+        "root": "controller.animation.ravager.root",
+        "look_at_target": "animation.common.look_at_target",
+        "base_pose": "animation.ravager.base_pose",
+        "idle1": "animation.ravager.idle1",
+        "idle2": "animation.ravager.idle2",
+        "idle3": "animation.ravager.idle3",
+        "roar": "animation.ravager.roar",
+        "stunned": "animation.ravager.stunned",
+        "move_upper_body": "animation.ravager.move_upper_body",
+        "move_lower_body_notarget": "animation.ravager.move_lower_body_notarget",
+        "move_lower_body_target_front": "animation.ravager.move_lower_body_target_front",
+        "move_lower_body_target_back": "animation.ravager.move_lower_body_target_back",
+        "attack": "animation.ravager.attack",
+        "dead": "animation.custom_death",
+        "dead1": "animation.ravager.dead1",
+        "dead2": "animation.ravager.dead2"
+      },
+      "particle_effects": {
+        "stun_particles": "minecraft:stunned_emitter"
+      },
+      "render_controllers": [
+        "controller.render.ravager"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 57
+      }
+    }
+  }
+}

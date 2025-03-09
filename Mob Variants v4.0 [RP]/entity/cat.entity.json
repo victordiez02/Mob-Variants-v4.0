@@ -1,0 +1,78 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:cat",
+      "materials": { "default": "cat" },
+      "textures": {
+        "white": "textures/entity/cat/white",
+        "black": "textures/entity/cat/tuxedo",
+        "red": "textures/entity/cat/redtabby",
+        "siamese": "textures/entity/cat/siamesecat",
+        "british": "textures/entity/cat/britishshorthair",
+        "calico": "textures/entity/cat/calico",
+        "persian": "textures/entity/cat/persian",
+        "ragdoll": "textures/entity/cat/ragdoll",
+        "tabby": "textures/entity/cat/tabby",
+        "jellie": "textures/entity/cat/jellie", 
+        "all_black": "textures/entity/cat/allblackcat",
+        "white_tame": "textures/entity/cat/white_tame",
+        "black_tame": "textures/entity/cat/tuxedo_tame",
+        "red_tame": "textures/entity/cat/redtabby_tame",
+        "siamese_tame": "textures/entity/cat/siamesecat_tame",
+        "british_tame": "textures/entity/cat/britishshorthair_tame",
+        "calico_tame": "textures/entity/cat/calico_tame",
+        "persian_tame": "textures/entity/cat/persian_tame",
+        "ragdoll_tame": "textures/entity/cat/ragdoll_tame",
+        "tabby_tame": "textures/entity/cat/tabby_tame",
+        "all_black_tame": "textures/entity/cat/allblackcat_tame",
+        "jellie_tame":  "textures/entity/cat/jellie_tame",
+        "garfield":  "textures/entity/cat/cat_garfield",
+        "garfield_tame":  "textures/entity/cat/cat_garfield_tame",
+        "pussinboots":  "textures/entity/cat/cat_pussinboots",
+        "pussinboots_tame":  "textures/entity/cat/cat_pussinboots_tame",
+        "nyan":  "textures/entity/cat/cat_nyan",
+        "nyan_tame":  "textures/entity/cat/cat_nyan_tame",
+        "tom":  "textures/entity/cat/cat_tom",
+        "tom_tame":  "textures/entity/cat/cat_tom_tame"
+      },
+      "geometry": {
+        "default": "geometry.catNew",
+        "garfield": "geometry.cat_garfield",
+        "pussinboots": "geometry.cat_pussinboots",
+        "nyan": "geometry.cat_nyan",
+        "tom": "geometry.cat_tom"
+      },
+      "animations": {
+        "sneak": "animation.cat.sneak",
+        "walk": "animation.cat.walk",
+        "idle": "animation.cat.idle",
+        "sprint": "animation.cat.sprint",
+        "sit": "animation.cat.sit",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.cat.baby_transform",
+        "blink": "animation.cat.blink",
+        "lie_down": "animation.cat.lie_down",
+        "death": "animation.cat.death",
+        "general": "controller.animation.cat.general"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ],
+        "animate": [
+          {"general": "query.is_alive"},
+          {"look_at_target": "query.is_alive"},
+          {"blink": "query.is_alive"},
+          {"death": "!query.is_alive"},
+          {"baby_transform": "query.is_baby"}
+        ]
+      },
+      "render_controllers": [ "controller.render.cat" ],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 53
+      }
+    }
+  }
+}

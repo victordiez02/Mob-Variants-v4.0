@@ -1,0 +1,46 @@
+{
+	"format_version": "1.10.0",
+	"geometry.sheep_horns": {
+		"texturewidth": 30,
+		"textureheight": 12,
+		"visible_bounds_width": 4,
+		"visible_bounds_height": 4,
+		"visible_bounds_offset": [0, 1, 0],
+		"bones": [
+			{
+				"name": "root",
+				"pivot": [0, 0, 0]
+			},
+			{
+				"name": "head",
+				"parent": "root",
+				"pivot": [0, 18, -8]
+			},
+			{
+				"name": "horns",
+				"parent": "head",
+				"pivot": [0, -1.25, -9]
+			},
+			{
+				"name": "right",
+				"parent": "horns",
+				"pivot": [4, -1.25, -9],
+				"cubes": [
+					{"origin": [-6.6, 18.95, -11], "size": [4, 3, 3], "uv": [8, 6]},
+					{"origin": [-6.6, 21.95, -10.5], "size": [2, 2, 2], "uv": [0, 0]},
+					{"origin": [-4.6, 22.95, -10.5], "size": [1, 1, 2], "uv": [24, 4]}
+				]
+			},
+			{
+				"name": "left",
+				"parent": "horns",
+				"pivot": [-3, -1.25, -9],
+				"cubes": [
+					{"origin": [2.6, 18.95, -11], "size": [4, 3, 3], "uv": [8, 0]},
+					{"origin": [4.6, 21.95, -10.5], "size": [2, 2, 2], "uv": [0, 4]},
+					{"origin": [3.6, 22.95, -10.5], "size": [1, 1, 2], "uv": [24, 0]}
+				]
+			}
+		]
+	}
+}

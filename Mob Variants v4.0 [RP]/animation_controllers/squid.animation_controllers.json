@@ -1,0 +1,32 @@
+{
+    "format_version": "1.10.0",
+    "animation_controllers": {
+        "controller.animation.squid.general": {
+            "initial_state": "default",
+            "states": {
+                "default": {
+                    "animations": [
+                        "idle"
+                    ],
+                    "transitions": [
+                        {
+                            "swimming": "query.ground_speed"
+                        }
+                    ],
+                    "blend_transition": 1
+                },
+                "swimming": {
+                    "animations": [
+                        "move"
+                    ],
+                    "transitions": [
+                        {
+                            "default": "!query.ground_speed"
+                        }
+                    ],
+                    "blend_transition": 1
+                }
+            }
+        }
+    }
+}

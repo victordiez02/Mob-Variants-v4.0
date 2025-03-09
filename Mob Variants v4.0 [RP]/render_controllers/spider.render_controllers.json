@@ -1,0 +1,52 @@
+// Render controller spider
+// q.variant: skin del mob.
+// q.mark_variant: si es araña gigante (1) o si no (0).
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.spider": {
+      "geometry": "q.variant ? array.geosq[q.mark_variant] : (variable.xvar < 85 ? geometry.default : geometry.giant_spider)",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "texture.default",
+            "texture.default2",
+            "texture.default3",
+            "texture.default4",
+            "texture.default5",
+            "texture.default6",
+            "texture.default7",
+            "texture.default8",
+            "texture.default9",
+            "texture.default10",
+            "texture.default11",
+            "texture.default12",
+            "texture.default13",
+            "texture.default14",
+            "texture.default15",
+            "texture.default16",
+            "texture.default17",
+            "texture.default18",
+            "texture.default19",
+            "texture.default20",
+            "texture.default21",
+            "texture.default22",
+            "texture.default23",
+            "texture.default24",
+            "texture.default25",
+            "texture.default26"
+          ]
+        },
+
+        "geometries": {
+          "array.geosq": [
+            "geometry.default",
+            "geometry.giant_spider"
+          ]
+        }
+      }
+    }
+  }
+}

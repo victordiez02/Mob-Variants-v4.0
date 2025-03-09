@@ -1,0 +1,93 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:frog",
+      "materials": {
+        "default": "enderman"
+      },
+      "textures": {
+        "temperate": "textures/entity/frog/temperate_frog",
+        "temperate2": "textures/entity/frog/temperate_frog2",
+        "temperate3": "textures/entity/frog/temperate_frog3",
+        "temperate4": "textures/entity/frog/temperate_frog4",
+        "temperate5": "textures/entity/frog/temperate_frog5",
+        "temperate6": "textures/entity/frog/temperate_frog6",
+        "temperate7": "textures/entity/frog/temperate_frog7",
+        "temperate8": "textures/entity/frog/temperate_frog8",
+        "temperate9": "textures/entity/frog/temperate_frog9",
+        "temperate10": "textures/entity/frog/temperate_frog10",
+        "cold": "textures/entity/frog/cold_frog",
+        "cold2": "textures/entity/frog/cold_frog2",
+        "cold3": "textures/entity/frog/cold_frog3",
+        "cold4": "textures/entity/frog/cold_frog4",
+        "cold5": "textures/entity/frog/cold_frog5",
+        "cold6": "textures/entity/frog/cold_frog6",
+        "cold7": "textures/entity/frog/cold_frog7",
+        "cold8": "textures/entity/frog/cold_frog8",
+        "cold9": "textures/entity/frog/cold_frog9",
+        "cold10": "textures/entity/frog/cold_frog10",
+        "warm": "textures/entity/frog/warm_frog",
+        "warm2": "textures/entity/frog/warm_frog2",
+        "warm3": "textures/entity/frog/warm_frog3",
+        "warm4": "textures/entity/frog/warm_frog4",
+        "warm5": "textures/entity/frog/warm_frog5",
+        "warm6": "textures/entity/frog/warm_frog6",
+        "warm7": "textures/entity/frog/warm_frog7",
+        "warm8": "textures/entity/frog/warm_frog8",
+        "warm9": "textures/entity/frog/warm_frog9",
+        "warm10": "textures/entity/frog/warm_frog10",
+        "special": "textures/entity/frog/special_frog",
+        "special2": "textures/entity/frog/special_frog2",
+        "special3": "textures/entity/frog/special_frog3",
+        "special4": "textures/entity/frog/special_frog4",
+        "special5": "textures/entity/frog/special_frog5",
+        "special6": "textures/entity/frog/special_frog6",
+        "special7": "textures/entity/frog/special_frog7",
+        "special8": "textures/entity/frog/special_frog8",
+        "special9": "textures/entity/frog/special_frog9",
+        "cake_frog": "textures/entity/frog/cake_frog",
+        "crown": "textures/entity/frog/frog_crown"
+      },
+      "geometry": {
+        "default": "geometry.frog",
+        "crown": "geometry.frog_crown",
+        "empty": "geometry.zombie_empty"
+      },
+      "spawn_egg": {
+        "base_color": "#d07444",
+        "overlay_color": "#ffc77c"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.moving = query.ground_speed > 0 || query.vertical_speed > 0;",
+          "variable.xvar = (variable.xvar ?? math.random(0,99));"
+        ]
+      },
+      "animations": {
+        "croak": "animation.frog.croak",
+        "jump": "animation.frog.jump",
+        "tongue": "animation.frog.tongue",
+        "walk": "animation.frog.walk",
+        "swim": "animation.frog.swim",
+        "idle_water": "animation.frog.idle.water",
+        "look_at_target": "animation.common.look_at_target"
+      },
+      "animation_controllers": [
+        {
+          "general": "controller.animation.frog.general"
+        },
+        {
+          "croaking": "controller.animation.frog.croaking"
+        },
+        {
+          "eat_mob": "controller.animation.frog.eat_mob"
+        }
+      ],
+      "render_controllers": [
+        "controller.render.frog",
+        "controller.render.frog_crown"
+      ]
+    }
+  }
+}
