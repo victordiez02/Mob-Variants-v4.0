@@ -1,0 +1,44 @@
+{
+	"format_version": "1.10.0",
+	"geometry.pig_flower": {
+		"texturewidth": 128,
+		"textureheight": 128,
+		"visible_bounds_width": 3,
+		"visible_bounds_height": 3.25,
+		"visible_bounds_offset": [0, 1.375, 0],
+		"bones": [
+			{
+				"name": "root",
+				"pivot": [0, 0, 0]
+			},
+			{
+				"name": "head",
+				"parent": "root",
+				"pivot": [0, 12, -6]
+			},
+			{
+				"name": "flower",
+				"parent": "head",
+				"pivot": [0, 39, -4]
+			},
+			{
+				"name": "1",
+				"parent": "flower",
+				"pivot": [0, 44, -4],
+				"rotation": [0, -50, 0],
+				"cubes": [
+					{"origin": [-8.36231, 15, -8.49951], "size": [7, 11, 0], "uv": [24, 117]}
+				]
+			},
+			{
+				"name": "2",
+				"parent": "flower",
+				"pivot": [0, 44, -4],
+				"rotation": [0, 45, 0],
+				"cubes": [
+					{"origin": [1.94975, 15, -8.94975], "size": [7, 11, 0], "uv": [24, 117]}
+				]
+			}
+		]
+	}
+}

@@ -1,0 +1,102 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:creeper",
+      "min_engine_version": "1.8.0",
+      "materials": {
+        "default": "enderman",
+        "charged": "charged_creeper"
+      },
+      "textures": {
+        "default": "textures/entity/creeper/creeper",
+        "charged": "textures/entity/creeper/creeper_armor",
+        "default2": "textures/entity/creeper/creeper2",
+        "default3": "textures/entity/creeper/creeper3",
+        "default4": "textures/entity/creeper/creeper4",
+        "default5": "textures/entity/creeper/creeper5",
+        "default6": "textures/entity/creeper/creeper6",
+        "default7": "textures/entity/creeper/creeper7",
+        "default8": "textures/entity/creeper/creeper8",
+        "default9": "textures/entity/creeper/creeper9",
+        "default10": "textures/entity/creeper/creeper10",
+        "default11": "textures/entity/creeper/creeper11",
+        "default12": "textures/entity/creeper/creeper12",
+        "default13": "textures/entity/creeper/creeper13",
+        "default14": "textures/entity/creeper/creeper14",
+        "default15": "textures/entity/creeper/creeper15",
+        "default16": "textures/entity/creeper/creeper16",
+        "default17": "textures/entity/creeper/creeper17",
+        "default18": "textures/entity/creeper/creeper18",
+        "default19": "textures/entity/creeper/creeper19",
+        "skeleton": "textures/entity/skeleton/skeleton",
+        "skeleton2": "textures/entity/skeleton/skeleton2",
+        "skeleton3": "textures/entity/skeleton/skeleton3",
+        "skeleton4": "textures/entity/skeleton/skeleton4",
+        "skeleton5": "textures/entity/skeleton/skeleton5",
+        "skeleton6": "textures/entity/skeleton/skeleton6",
+        "skeleton7": "textures/entity/skeleton/skeleton7",
+        "skeleton8": "textures/entity/skeleton/skeleton8",
+        "skeleton9": "textures/entity/skeleton/skeleton9",
+        "skeleton10": "textures/entity/skeleton/skeleton10",
+        "skeleton11": "textures/entity/skeleton/skeleton11",
+        "skeleton12": "textures/entity/skeleton/skeleton12",
+        "skeleton13": "textures/entity/skeleton/skeleton13",
+        "skeleton14": "textures/entity/skeleton/skeleton14",
+        "skeleton15": "textures/entity/skeleton/skeleton15",
+        "TnT": "textures/entity/creeper/creeper_TnT",
+        "cactus": "textures/entity/creeper/creeper_cactus",
+        "stone": "textures/entity/creeper/creeper_stone",
+        "shells": "textures/entity/creeper/creeper_shells"
+      },
+      "geometry": {
+        "default": "geometry.creeper.v1.8",
+        "charged": "geometry.creeper.charged.v1.8",
+        "empty": "geometry.zombie_empty",
+        "skeleton": "geometry.creeper_s.v1.8",
+        "hector_salamanca" :"geometry.hector_salamanca",
+        "TnT": "geometry.creeper_TnT",
+        "ribs_TnT": "geometry.creeper_ribs_TnT",
+        "TnT_s": "geometry.creeper_TnT_s.v1.8",
+        "cactus": "geometry.creeper_cactus",
+        "stone": "geometry.creeper_stone",
+        "shells": "geometry.creeper_shells"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 6
+      },
+      "animations": {
+        "creeper_head": "animation.common.look_at_target",
+        "walk": "animation.creeper.walk",
+        "blink": "animation.creeper.blink",
+        "death": "animation.creeper.death",
+        "idle": "animation.creeper.idle",
+        "creeper_swelling": "animation.creeper.swelling",
+        "general": "controller.animation.creeper.general",
+        "swelling_controller": "controller.animation.creeper.swelling"
+      },
+      "scripts": {
+        "pre_animation": [
+          "variable.wobble = Math.sin(query.swell_amount * 5730) * query.swell_amount * 0.01 + 1.0;",
+          "variable.swelling_scale1 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.4 + 1.0) * variable.wobble;",
+          "variable.swelling_scale2 = (Math.pow(Math.clamp(query.swell_amount, 0.0, 1.0), 4.0) * 0.1 + 1.0) / variable.wobble;",
+          "variable.flash = Math.mod(Math.Round(query.swell_amount * 10.0), 2.0);",
+          "variable.xvar = query.anim_time > 0 ? variable.xvar :  Math.random(0, 99);"
+        ],
+        "animate": [
+          {"death": "!query.is_alive"},
+          {"blink": "query.is_alive"},
+          "swelling_controller",
+          "general",
+          "creeper_head"
+        ]
+      },
+      "render_controllers": [
+          "controller.render.creeper",
+          "controller.render.creeper_hat",
+          "controller.render.creeper_TnT_s"
+      ]
+    }
+  }
+}

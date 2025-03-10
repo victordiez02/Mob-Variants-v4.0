@@ -1,0 +1,61 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:iron_golem",
+            "min_engine_version": "1.16.0",
+            "materials": {
+                "default": "iron_golem"
+            },
+            "textures": {
+                "default": "textures/entity/iron_golem/iron_golem",
+                "default2": "textures/entity/iron_golem/iron_golem2",
+                "default3": "textures/entity/iron_golem/iron_golem3",
+                "default4": "textures/entity/iron_golem/iron_golem4",
+                "default5": "textures/entity/iron_golem/iron_golem5",
+                "default6": "textures/entity/iron_golem/iron_golem6",
+                "default7": "textures/entity/iron_golem/iron_golem7",
+                "default8": "textures/entity/iron_golem/iron_golem8",
+                "default9": "textures/entity/iron_golem/iron_golem9",
+                "default10": "textures/entity/iron_golem/iron_golem10",
+                "default11": "textures/entity/iron_golem/iron_golem11",
+                "default12": "textures/entity/iron_golem/iron_golem12",
+                "default13": "textures/entity/iron_golem/iron_golem13",
+                "default14": "textures/entity/iron_golem/iron_golem14",
+                "default15": "textures/entity/iron_golem/iron_golem15",
+                "item_sorter": "textures/entity/iron_golem/iron_golem_item_sorter"
+            },
+            "geometry": {
+                "default": "geometry.irongolem",
+                "empty": "geometry.zombie_empty",
+                "rose": "geometry.irongolem_rose"
+            },
+            "animations": {
+                "walk": "animation.irongolem.walk",
+                "idle": "animation.irongolem.idle",
+                "has_target": "animation.irongolem.has_target",
+                "attack": "animation.irongolem.attack",
+                "flower": "animation.irongolem.flower",
+                "death": "animation.irongolem.death",
+                "look_at_target": "animation.common.look_at_target",
+                "general": "controller.animation.iron_golem.general"
+            },
+            "scripts": {
+                "pre_animation": [
+                    "variable.modified_tcos0 = Math.clamp(((Math.cos(query.modified_distance_moved * 13.5) * Math.min(query.modified_move_speed, 0.6) / variable.gliding_speed_value) * 25.0), -12.5, 12.5);",
+                    "variable.attack_time = math.sin(variable.attack_time * 25);",
+                    "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+                ],
+                "animate": [
+                    "general",
+                    {"look_at_target": "query.is_alive"},
+                    {"death": "!query.is_alive"}
+                ]
+            },
+            "render_controllers": [
+                "controller.render.iron_golem",
+                "controller.render.irongolem_rose"
+            ]
+        }
+    }
+}

@@ -1,0 +1,88 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    /*"controller.render.enderman": {
+      "geometry": "variable.xvar < 5 ? geometry.endersent : (variable.xvar < 10 ? geometry.necrosent : (variable.xvar < 30 ? geometry.blastling : (variable.xvar < 50 ? geometry.watchling : geometry.default)))",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "variable.xvar < 5 ? Texture.endersent : (variable.xvar < 10 ? Texture.necrosent : (variable.xvar < 30 ? array.blastlingskins[variable.xvar] : (variable.xvar < 50 ? array.watchlingskins[variable.xvar] : array.xskins[variable.xvar])))" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9",
+            "Texture.default10",
+            "Texture.default11",
+            "Texture.default12",
+            "Texture.default13",
+            "Texture.default14",
+            "Texture.default15",
+            "Texture.default16",
+            "Texture.default17",
+            "Texture.default18"
+          ],
+          "array.blastlingskins": [
+            "Texture.blastling",
+            "Texture.blastling2",
+            "Texture.blastling3",
+            "Texture.blastling4"
+          ],
+          "array.watchlingskins": [
+            "Texture.watchling",
+            "Texture.watchling2",
+            "Texture.watchling3",
+            "Texture.watchling4"
+          ]
+        }
+      }
+    }*/
+    "controller.render.enderman": {
+      "geometry": "geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9",
+            "Texture.default10",
+            "Texture.default11",
+            "Texture.default12",
+            "Texture.default13",
+            "Texture.default14",
+            "Texture.default15",
+            "Texture.default16",
+            "Texture.default17",
+            "Texture.default18",
+            "Texture.default19",
+            "Texture.default20",
+            "Texture.default21",
+            "Texture.default22",
+            "Texture.default23",
+            "Texture.default24",
+            "Texture.default25",
+            "Texture.default26"
+          ]
+        }
+      }
+    },
+    "controller.render.enderman_jaw": {
+      "geometry": "geometry.jaw",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.jaw" ]
+    }
+  }
+}

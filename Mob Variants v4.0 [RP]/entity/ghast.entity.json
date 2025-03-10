@@ -1,0 +1,60 @@
+{
+  "format_version": "1.8.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:ghast",
+      "materials": { "default": "ghast" },
+      "textures": {
+        "default": "textures/entity/ghast/ghast",
+        "shooting": "textures/entity/ghast/ghast_shooting",
+        "default2": "textures/entity/ghast/ghast2",
+        "shooting2": "textures/entity/ghast/ghast2s",
+        "default3": "textures/entity/ghast/ghast3",
+        "shooting3": "textures/entity/ghast/ghast3s",
+        "default4": "textures/entity/ghast/ghast4",
+        "shooting4": "textures/entity/ghast/ghast4s",
+        "default5": "textures/entity/ghast/ghast5",
+        "shooting5": "textures/entity/ghast/ghast5s",
+        "default6": "textures/entity/ghast/ghast6",
+        "shooting6": "textures/entity/ghast/ghast6s",
+        "default7": "textures/entity/ghast/ghast7",
+        "shooting7": "textures/entity/ghast/ghast7s",
+        "default8": "textures/entity/ghast/ghast8",
+        "shooting8": "textures/entity/ghast/ghast8s",
+        "default9": "textures/entity/ghast/ghast9",
+        "shooting9": "textures/entity/ghast/ghast9s",
+        "default10": "textures/entity/ghast/ghast10",
+        "shooting10": "textures/entity/ghast/ghast10s",
+        "default11": "textures/entity/ghast/ghast11",
+        "shooting11": "textures/entity/ghast/ghast11s",
+        "default12": "textures/entity/ghast/ghast12",
+        "shooting12": "textures/entity/ghast/ghast12s",
+        "default13": "textures/entity/ghast/ghast13",
+        "shooting13": "textures/entity/ghast/ghast13s"
+      },
+      "geometry": {
+        "default": "geometry.ghast"
+      },
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 19
+      },
+      "animations": {
+        "move": "animation.ghast.move",
+        "scale": "animation.ghast.scale"
+      },
+      "animation_controllers": [
+        { "move": "controller.animation.ghast.move" },
+        { "scale": "controller.animation.ghast.scale" }
+      ],
+      "scripts": {
+        "pre_animation": [
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ]
+      },
+      "render_controllers": [
+          "controller.render.ghast"
+      ]
+    }
+  }
+}

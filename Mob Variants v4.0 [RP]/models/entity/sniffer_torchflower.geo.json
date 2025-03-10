@@ -1,0 +1,54 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sniffer_torchflower",
+				"texture_width": 192,
+				"texture_height": 192,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bone",
+					"pivot": [0, 19, -1.75]
+				},
+				{
+					"name": "body",
+					"parent": "bone",
+					"pivot": [0, 0, -1.75]
+				},
+				{
+					"name": "head",
+					"parent": "body",
+					"pivot": [0, 13.5, -21.15]
+				},
+				{
+					"name": "flower",
+					"parent": "head",
+					"pivot": [0, 44.5, -20]
+				},
+				{
+					"name": "1",
+					"parent": "flower",
+					"pivot": [-1, 49.5, -21],
+					"rotation": [0, -50, 0],
+					"cubes": [
+						{"origin": [-13.36231, 20.5, -25.49951], "size": [16, 16, 0], "uv": [81, 140]}
+					]
+				},
+				{
+					"name": "2",
+					"parent": "flower",
+					"pivot": [0, 49.5, -20],
+					"rotation": [0, 45, 0],
+					"cubes": [
+						{"origin": [-3.05025, 20.5, -25.44975], "size": [16, 16, 0], "pivot": [4.75, 24.5, -25.5], "rotation": [0, -5, 0], "uv": [81, 140]}
+					]
+				}
+			]
+		}
+	]
+}

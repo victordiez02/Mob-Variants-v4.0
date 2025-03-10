@@ -1,0 +1,258 @@
+// Render controller zombie
+// q.variant estan dadas por un número de 3 cifras. 
+// Primera cifra: Indica si tiene si tiene espada clavada o bien en el torso (1, 2), o bien en la cabeza (3) o bien no tiene espada clavada (0). 
+// Segunda y tercera cifra: Indica la skin.
+
+// q.mark_variant viene dado por un número de 3 cifras.
+// Primera cifra: Indica si o bien el zombie camina de pie normal (0), o bien de pie con la mandibula rota (1, 2), o bien arrastrado (3, 4, 5, 6).
+// Segunda cifra: Indica si el zombie tiene casco minero (1) o no (0).
+// Tercera cifra: Indica el tipo de espada clavada (0, ..., 5)
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.zombie": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.empty" ]
+    },
+
+    "controller.render.other_zombie": {
+      "geometry": "q.variant ? (q.is_baby ? geometry.default : array.geosq[q.mark_variant / 100]) : (query.is_baby || variable.xvar < 50 || variable.yvar < 24 || variable.zvar < 20 || query.is_item_equipped(0) || query.equipment_count > 0 ? Array.geos[variable.xvar] : Array.geos_fallen[variable.xvar])",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9",
+            "Texture.default10",
+            "Texture.default11",
+            "Texture.default12",
+            "Texture.default13",
+            "Texture.default14",
+            "Texture.default15",
+            "Texture.default16",
+            "Texture.default17",
+            "Texture.default18",
+            "Texture.default19",
+            "Texture.default20",
+            "Texture.default21",
+            "Texture.default22",
+            "Texture.default23",
+            "Texture.default24",
+            "Texture.default25",
+            "Texture.default26",
+            "Texture.default27",
+            "Texture.default28",
+            "Texture.default29",
+            "Texture.default30",
+            "Texture.default31",
+            "Texture.default32",
+            "Texture.default33",
+            "Texture.gold"
+          ]
+        },
+        "geometries": {
+          "Array.geos": [
+             "Geometry.default",
+             "Geometry.default",
+             "Geometry.default",
+             "Geometry.default",
+             "Geometry.brokenjaw",
+             "Geometry.brokenjaw2"
+          ],
+          "Array.geos_fallen": [
+              "Geometry.default2",
+              "Geometry.default3",
+              "Geometry.default4",
+              "Geometry.default5"
+          ],
+
+          "Array.geosq": [
+             "Geometry.default",
+             "Geometry.brokenjaw",
+             "Geometry.brokenjaw2",
+             "Geometry.default2",
+             "Geometry.default3",
+             "Geometry.default4",
+             "Geometry.default5"
+          ]
+        }
+      }
+    },
+
+    "controller.render.zombie_leg": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.variant ? (q.mark_variant / 100 < 3 || q.is_baby ? geometry.empty: geometry.leg) : (query.is_baby || variable.xvar < 50 || variable.yvar < 24 || variable.zvar < 20 || query.is_item_equipped(0) || query.equipment_count > 0 ? Geometry.empty : Geometry.leg)",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "texture.leg" ],
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    },
+
+    "controller.render.zombie_arrows": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.variant ? geometry.empty : (variable.xvar < 4 ? geometry.arrow_head_1 : (variable.xvar < 9 ? geometry.arrow_head_2 : (variable.xvar < 14 ? geometry.arrow_chest_1 :  (variable.xvar < 19 ? geometry.arrow_chest_2 : (variable.xvar < 24 ? geometry.arrow_knee : Geometry.empty)))))",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "texture.overlay7" ],
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    },
+    "controller.render.zombie_arrows2": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.variant ? geometry.empty : (variable.yvar < 4 ? geometry.arrow_head_1 : (variable.yvar < 9 ? Geometry.arrow_head_2 : (variable.yvar < 14 ? geometry.arrow_chest_1 :  (variable.yvar < 19 ? geometry.arrow_chest_2 : (variable.yvar < 24 ? geometry.arrow_knee : Geometry.empty)))))",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "texture.overlay7" ],
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    },
+    "controller.render.zombie_miner": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.is_baby ? geometry.empty : (q.variant ? array.geosq[q.mark_variant / 100 < 3 ? q.mark_variant / 10 : 0] : (query.position(1) < 40 ? array.geos[variable.xvar / 30]))",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "texture.miner" ],
+      "arrays": {
+        "geometries": {
+          "array.geos": [
+             "geometry.miner",
+             "geometry.empty"
+          ],
+          "array.geosq": [
+            "geometry.empty",
+            "geometry.miner"
+          ]
+        }
+      },
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    },
+    "controller.render.zombie_miner_pickaxe": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.is_baby ? geometry.empty : (q.variant ? array.geosq[q.mark_variant / 100 < 3 ? q.mark_variant / 10 : 0] : (query.position(1) < 40 ? array.geos[variable.xvar / 30]))",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "array.yskins[variable.yvar]" ],
+      "arrays": {
+        "textures": {
+          "array.yskins": [
+            "Texture.overlay",
+            "Texture.overlay2",
+            "Texture.overlay3",
+            "Texture.overlay4",
+            "Texture.overlay5",
+            "Texture.overlay6"
+          ]
+        },
+        "geometries": {
+          "array.geos": [
+             "geometry.pickaxe",
+             "geometry.empty"
+          ],
+          "array.geosq": [
+            "geometry.empty",
+            "geometry.pickaxe"
+             
+          ]
+        }
+      },
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    },
+    "controller.render.zombie_sword": {
+      "rebuild_animation_matrices": true,
+      "geometry": "q.variant ? (q.is_baby ? Geometry.empty : Array.geosq[q.mark_variant / 100 < 3 ? (q.variant - 1) / 10 : 0]) : (q.is_baby ? Geometry.empty : (variable.zvar < 5 ? Geometry.sword_head : (variable.zvar < 13 ? Geometry.sword_chest : (variable.zvar < 20 ? Geometry.sword_chest2 : Geometry.empty))))",
+      "materials": [ { "*": "Material.overlay" } ],
+      "textures": [ "q.variant ? array.yskins[Math.mod(q.mark_variant, 10)] : array.yskins[variable.yvar]" ],
+      "arrays": {
+        "textures": {
+          "array.yskins": [
+            "Texture.overlay",
+            "Texture.overlay2",
+            "Texture.overlay3",
+            "Texture.overlay4",
+            "Texture.overlay5",
+            "Texture.overlay6"
+          ]
+        },
+
+        "geometries": {
+          "Array.geosq": [
+             "Geometry.empty",
+             "Geometry.sword_chest",
+             "Geometry.sword_chest2",
+             "Geometry.sword_head"
+          ]
+        }
+      },
+      "is_hurt_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      },
+      "on_fire_color": {
+        "r": "q.is_alive ? 1 : 0",
+        "g": "q.is_alive ? 0 : 0",
+        "b": "q.is_alive ? 0 : 0",
+        "a": "q.is_alive ? 0.6 : 0"
+      }
+    }
+  }
+}

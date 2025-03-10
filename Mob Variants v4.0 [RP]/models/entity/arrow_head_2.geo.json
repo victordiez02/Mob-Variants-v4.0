@@ -1,0 +1,68 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.arrow_head_2",
+				"texture_width": 32,
+				"texture_height": 32,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "spine",
+					"parent": "root",
+					"pivot": [0, 12, 0]
+				},
+				{
+					"name": "head",
+					"parent": "spine",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "arrow",
+					"parent": "head",
+					"pivot": [2, 26, 1],
+					"rotation": [177.07093, -15.77591, -74.32448],
+					"cubes": [
+						{
+							"origin": [2, 23.5, -2],
+							"size": [0, 5, 16],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [16, 5]}
+							}
+						},
+						{
+							"origin": [-0.5, 23.5, 13],
+							"size": [5, 5, 0],
+							"uv": {
+								"south": {"uv": [0, 5], "uv_size": [5, 5]}
+							}
+						}
+					]
+				},
+				{
+					"name": "bone4",
+					"parent": "arrow",
+					"pivot": [2, 26, 1],
+					"rotation": [0, 0, 90],
+					"cubes": [
+						{
+							"origin": [2, 23.5, -2],
+							"size": [0, 5, 16],
+							"uv": {
+								"east": {"uv": [0, 0], "uv_size": [16, 5]}
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}

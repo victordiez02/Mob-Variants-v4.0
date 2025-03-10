@@ -1,0 +1,70 @@
+  {
+  "format_version": "1.10.0",
+  "animation_controllers": {
+    "controller.animation.mob.fall": {
+      "initial_state": "default",
+      "states": {
+        "default": {
+          "on_entry": [ "v.fall = 0;" ],
+          "transitions": [
+            { "fall_low": "q.vertical_speed < -5 && !q.is_on_ground && !q.is_in_water && q.is_alive" }
+          ],
+          "blend_transition": 0.1,
+          "blend_via_shortest_path": true
+        },
+        "fall_low": {
+          "on_entry": [ "v.fall = 1;" ],
+          "animations": [ "falling_low" ],
+          "transitions": [
+            { "default": "q.is_in_water || !q.is_alive" },
+            { "fall_trans": "q.vertical_speed < -10" },
+            { "land_low": "q.vertical_speed >= 0 || q.is_on_ground" }
+          ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        },
+        "fall_trans": {
+          "on_entry": [ "v.fall = 1;" ],
+          "animations": [ "falling_trans" ],
+          "transitions": [
+            { "default": "q.is_in_water || !q.is_alive" },
+            { "fall_high": "q.any_animation_finished" },
+            { "land_low": "q.vertical_speed >= 0 || q.is_on_ground" }
+          ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        },
+        "fall_high": {
+          "on_entry": [ "v.fall = 1;" ],
+          "animations": [ "falling_high" ],
+          "transitions": [
+            { "default": "q.is_in_water || !q.is_alive" },
+            { "land_high": "q.vertical_speed >= 0 || q.is_on_ground" }
+          ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        },
+        "land_low": {
+          "on_entry": [ "v.fall = 1;" ],
+          "animations": [ "land_low", "move_lower_body" ],
+          "transitions": [
+            { "default": "q.all_animations_finished || !q.is_alive || (q.has_target && q.anim_time >= 0.5)" }
+          ],
+          "on_exit": [ "v.fall = 0;" ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        },
+        "land_high": {
+          "on_entry": [ "v.fall = 1;" ],
+          "animations": [ "land_high", "move_lower_body" ],
+          "transitions": [
+            { "default": "q.all_animations_finished || !q.is_alive || (q.has_target && q.anim_time >= 0.5)" }
+          ],
+          "on_exit": [ "v.fall = 0;" ],
+          "blend_transition": 0.2,
+          "blend_via_shortest_path": true
+        }
+      }
+    }
+  }
+}

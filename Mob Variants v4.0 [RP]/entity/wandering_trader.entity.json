@@ -1,0 +1,67 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:wandering_trader",
+      "min_engine_version": "1.16.0",
+      "materials": {
+        "default": "wandering_trader"
+      },
+      "textures": {
+        "default": "textures/entity/wandering_trader",
+        "default2": "textures/entity/villager2/wandering_trader/wandering_trader2",
+        "default3": "textures/entity/villager2/wandering_trader/wandering_trader3",
+        "default4": "textures/entity/villager2/wandering_trader/wandering_trader4",
+        "default5": "textures/entity/villager2/wandering_trader/wandering_trader5",
+        "default6": "textures/entity/villager2/wandering_trader/wandering_trader6",
+        "default7": "textures/entity/villager2/wandering_trader/wandering_trader7",
+        "default8": "textures/entity/villager2/wandering_trader/wandering_trader8",
+        "default9": "textures/entity/villager2/wandering_trader/wandering_trader9",
+        "backpack": "textures/entity/skeleton/backpack"
+      },
+      "geometry": {
+        "default": "geometry.villager_v2",
+        "backpack": "geometry.wandering_trader_backpack"
+      },
+      "animations": {
+        "walking": "animation.villager.walk",
+        "blink": "animation.villager.eyelids",
+        "death": "animation.villager.death",
+        "panic": "animation.villager.panic",
+        "idle": "animation.villager.idle",
+        "general": "controller.animation.villager.general",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.villager.baby_transform",
+        "get_in_bed": "animation.villager.get_in_bed"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "pre_animation": [
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ],
+        "animate": [
+          {
+            "baby_transform": "query.is_baby"
+          },
+          {
+            "blink": "query.is_alive && !query.is_sleeping"
+          },
+          {
+            "look_at_target": "query.is_alive && !query.is_sleeping"
+          },
+          {
+            "death": "!query.is_alive"
+          },
+          "general"
+        ]
+      },
+      "render_controllers": [
+          "controller.render.wandering_trader",
+          "controller.render.wandering_trader_backpack"
+      ],
+      "spawn_egg": {
+        "texture": "spawn_egg_wandering_trader"
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.sniffer": {
+      "geometry": "Geometry.default",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? array.xskins[q.variant - 1] : array.xskins[variable.xvar]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins":[
+            "texture.default",
+            "texture.default2",
+            "texture.default3",
+            "texture.default4",
+            "texture.default5",
+            "texture.default6",
+            "texture.default7",
+            "texture.default8",
+            "texture.default9"
+          ]
+        }
+      }
+    },
+    "controller.render.sniffer_flower": {
+      "geometry": "q.mark_variant < 4 ? geometry.torchflower : geometry.pitchflower",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "array.xskins[q.mark_variant]" ],
+      "arrays": {
+        "textures": {
+          "array.xskins":[
+            "texture.default9",
+            "texture.default",
+            "texture.default2",
+            "texture.default3",
+            "texture.default",
+            "texture.default2",
+            "texture.default3",
+            "texture.default4"
+          ]
+        }
+      }
+    }
+  }
+}

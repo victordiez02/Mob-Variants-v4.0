@@ -1,0 +1,116 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "minecraft:villager_v2",
+            "min_engine_version": "1.16.0",
+            "materials": {
+                "default": "villager_v2",
+                "masked": "villager_v2_masked",
+                "overlay": "villager_overlay"
+            },
+            "textures": {
+                "empty": "textures/entity/empty",
+                // Base Textures - Vanilla Minecraft only has one such texture, rename these for resource packs desiring variety
+                "base": "textures/entity/villager2/villager",
+                "base2": "textures/entity/villager2/villager",
+                "base3": "textures/entity/villager2/villager",
+                "base4": "textures/entity/villager2/villager",
+                "base5": "textures/entity/villager2/villager",
+                "base6": "textures/entity/villager2/villager",
+
+                // Biome Layer
+                "desert": "textures/entity/villager2/biomes/biome_desert",
+                "jungle": "textures/entity/villager2/biomes/biome_jungle",
+                "plains": "textures/entity/villager2/biomes/biome_plains",
+                "savanna": "textures/entity/villager2/biomes/biome_savanna",
+                "snow": "textures/entity/villager2/biomes/biome_snow",
+                "swamp": "textures/entity/villager2/biomes/biome_swamp",
+                "taiga": "textures/entity/villager2/biomes/biome_taiga",
+
+                // Profession Layer
+                "armorer": "textures/entity/villager2/professions/armorer",
+                "butcher": "textures/entity/villager2/professions/butcher",
+                "cartographer": "textures/entity/villager2/professions/cartographer",
+                "cleric": "textures/entity/villager2/professions/cleric",
+                "farmer": "textures/entity/villager2/professions/farmer",
+                "fisherman": "textures/entity/villager2/professions/fisherman",
+                "fletcher": "textures/entity/villager2/professions/fletcher",
+                "leatherworker": "textures/entity/villager2/professions/leatherworker",
+                "librarian": "textures/entity/villager2/professions/librarian",
+                "shepherd": "textures/entity/villager2/professions/shepherd",
+                "tool_smith": "textures/entity/villager2/professions/toolsmith",
+                "weapon_smith": "textures/entity/villager2/professions/weaponsmith",
+                "stonemason": "textures/entity/villager2/professions/stonemason",
+                "nitwit": "textures/entity/villager2/professions/nitwit",
+                "unskilled": "textures/entity/villager2/professions/unskilled",
+
+                // Profession Overlay (Mob Variants)
+                "armorer_overlay": "textures/entity/villager2/professions/armorer_overlay",
+                "butcher_overlay": "textures/entity/villager2/professions/butcher_overlay",
+                "cartographer_overlay": "textures/entity/villager2/professions/cartographer_overlay",
+                "cleric_overlay": "textures/entity/villager2/professions/cleric_overlay",
+                "farmer_overlay": "textures/entity/villager2/professions/farmer_overlay",
+                "fisherman_overlay": "textures/entity/villager2/professions/fisherman_overlay",
+                "fletcher_overlay": "textures/entity/villager2/professions/fletcher_overlay",
+                "leatherworker_overlay": "textures/entity/villager2/professions/leatherworker_overlay",
+                "librarian_overlay": "textures/entity/villager2/professions/librarian_overlay",
+                "shepherd_overlay": "textures/entity/villager2/professions/shepherd_overlay",
+                "tool_smith_overlay": "textures/entity/villager2/professions/toolsmith_overlay",
+                "weapon_smith_overlay": "textures/entity/villager2/professions/weaponsmith_overlay",
+                "stonemason_overlay": "textures/entity/villager2/professions/stonemason_overlay",
+                "nitwit_overlay": "textures/entity/villager2/professions/nitwit_overlay",
+                "unskilled_overlay": "textures/entity/villager2/professions/unskilled_overlay",
+
+                // Levels Layer
+                "level_stone": "textures/entity/villager2/levels/level_stone",
+                "level_iron": "textures/entity/villager2/levels/level_iron",
+                "level_gold": "textures/entity/villager2/levels/level_gold",
+                "level_emerald": "textures/entity/villager2/levels/level_emerald",
+                "level_diamond": "textures/entity/villager2/levels/level_diamond"
+            },
+            "geometry": {
+                "default": "geometry.villager_v2",
+                "overlay": "geometry.villager_overlay",
+                "empty": "geometry.zombie_empty"
+            },
+            "animations": {
+                "walking": "animation.villager.walk",
+                "blink": "animation.villager.eyelids",
+                "death": "animation.villager.death",
+                "panic": "animation.villager.panic",
+                "idle": "animation.villager.idle",
+                "general": "controller.animation.villager.general",
+                "look_at_target": "animation.common.look_at_target",
+                "baby_transform": "animation.villager.baby_transform",
+                "get_in_bed": "animation.villager.get_in_bed"
+            },
+            "scripts": {
+                "scale": "0.9375",
+                "pre_animation": [
+                    "variable.num_professions = 15;",
+                    "variable.num_tiers = 3;",
+                    "variable.profession_index = (query.variant < variable.num_professions ? query.variant : 0);",
+                    "variable.level_index = query.trade_tier;"
+                ],
+                "animate": [
+                    { "baby_transform": "query.is_baby" },
+                    { "blink": "query.is_alive && !query.is_sleeping" },
+                    { "look_at_target": "query.is_alive && !query.is_sleeping" },
+                    { "death": "!query.is_alive" },
+                    "general"
+                ]
+            },
+            "render_controllers": [
+                "controller.render.villager_v2_base",
+                "controller.render.villager_v2_masked",
+                "controller.render.villager_v2_level",
+                "controller.render.villager_v2_overlay"
+            ],
+            "spawn_egg": {
+                "texture": "spawn_egg",
+                "texture_index": 14
+            }
+        }
+    }
+}

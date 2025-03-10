@@ -1,0 +1,44 @@
+// Render controller wither skeleton
+// q.variant: skin del mob (1, ..., 9) o rey wither (100).
+// q.mark_variant: si es default (0), Nameless wither (1) o hunter wither (2).
+
+{
+  "format_version": "1.8.0",
+  "render_controllers": {
+    "controller.render.wither_skeleton": {
+      "geometry": "q.variant ? (q.variant == 100 ? geometry.skeleton_king : geometry.default) : (variable.xvar > 20 && variable.xvar < 25 ? geometry.skeleton_king : Geometry.default)",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "q.variant ? (q.variant == 100 ? Texture.skeleton_king : array.xskins[q.variant - 1]) : (variable.xvar > 20 && variable.xvar < 25 ? Texture.skeleton_king : array.xskins[variable.xvar])" ],
+      "arrays": {
+        "textures": {
+          "array.xskins": [
+            "Texture.default",
+            "Texture.default2",
+            "Texture.default3",
+            "Texture.default4",
+            "Texture.default5",
+            "Texture.default6",
+            "Texture.default7",
+            "Texture.default8",
+            "Texture.default9"
+          ]
+        }
+      }
+    },
+    "controller.render.wither_skeleton_cape": {
+      "geometry": "q.variant ? (q.mark_variant == 1 && q.variant != 100 ? geometry.cape : geometry.empty) : (variable.xvar < 20 ? geometry.cape : geometry.empty)",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "texture.cape" ]
+    },
+    "controller.render.backpack": {
+      "geometry": "q.variant ? (q.mark_variant == 2 && q.variant != 100 ? geometry.backpack : geometry.empty) : (variable.xvar > 85 ? geometry.backpack : geometry.empty)",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.backpack" ]
+    },
+    "controller.render.piglin_heads": {
+      "geometry": "q.variant ? (q.mark_variant == 2 && q.variant != 100 ? geometry.piglin_heads : geometry.empty) : (variable.xvar > 85 ? geometry.piglin_heads : geometry.empty)",
+      "materials": [ { "*": "Material.default" } ],
+      "textures": [ "Texture.piglin_heads" ]
+    }
+  }
+}

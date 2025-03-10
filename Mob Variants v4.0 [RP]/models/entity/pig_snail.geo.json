@@ -1,0 +1,86 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.snail",
+				"texture_width": 72,
+				"texture_height": 24,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 1]
+				},
+				{
+					"name": "root_snail",
+					"parent": "root",
+					"pivot": [0, 0, 7]
+				},
+				{
+					"name": "head",
+					"parent": "root_snail",
+					"pivot": [0, 0, -6]
+				},
+				{
+					"name": "head_snail",
+					"parent": "head",
+					"pivot": [0, 1, -6],
+					"cubes": [
+						{"origin": [0, 0, -8.7], "size": [3, 3.5, 5], "pivot": [0, 0, -6], "rotation": [0, 90, 0], "uv": [51, 10]}
+					]
+				},
+				{
+					"name": "eyes",
+					"parent": "head_snail",
+					"pivot": [0, 3.5, -9],
+					"cubes": [
+						{"origin": [0.5, 3.5, -9], "size": [1, 7, 1], "pivot": [1.5, 3, -8], "rotation": [12.5, 0, 0], "uv": [0, 0]},
+						{"origin": [-1.75, 3.5, -9], "size": [1, 7, 1], "pivot": [-1.75, 3, -8], "rotation": [12.5, 0, 0], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "nose",
+					"parent": "head_snail",
+					"pivot": [0, 2, -9],
+					"cubes": [
+						{"origin": [11, 1, -2.7], "size": [1, 1, 1], "pivot": [1, 0, 1], "rotation": [0, 90, 0], "uv": [57, 11]},
+						{"origin": [3, 1, -4.7], "size": [1, 1, 1], "pivot": [0, 0, -6], "rotation": [0, 90, 0], "uv": [57, 11]}
+					]
+				},
+				{
+					"name": "body",
+					"parent": "root_snail",
+					"pivot": [0, 2, 1],
+					"cubes": [
+						{
+							"origin": [-5, 0, -2.7],
+							"size": [13, 3.5, 5],
+							"pivot": [1, 0, 1],
+							"rotation": [0, 90, 0],
+							"uv": {
+								"north": {"uv": [37, 8], "uv_size": [15, 3]},
+								"east": {"uv": [32, 8], "uv_size": [5, 3]},
+								"south": {"uv": [57, 8], "uv_size": [15, 3]},
+								"west": {"uv": [52, 8], "uv_size": [5, 3]},
+								"up": {"uv": [37, 3], "uv_size": [15, 5]},
+								"down": {"uv": [52, 8], "uv_size": [15, -5]}
+							}
+						}
+					]
+				},
+				{
+					"name": "shell",
+					"parent": "body",
+					"pivot": [0, 0.5, 1],
+					"cubes": [
+						{"origin": [-2.75, 3.5, -5.5], "size": [5.25, 11, 10], "pivot": [0, 3.5, -5.5], "rotation": [-7.5, 0, 0], "uv": [0, 0]}
+					]
+				}
+			]
+		}
+	]
+}

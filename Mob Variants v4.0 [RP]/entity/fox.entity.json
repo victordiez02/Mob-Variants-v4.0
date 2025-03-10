@@ -1,0 +1,52 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "minecraft:fox",
+      "min_engine_version": "1.16.0",
+      "materials": { "default": "fox" },
+      "textures": {
+        "red": "textures/entity/fox/fox",
+        "arctic": "textures/entity/fox/arctic_fox",
+        "perry": "textures/entity/fox/perry"
+      },
+      "geometry": {
+        "default": "geometry.fox_bma",
+        "platypus": "geometry.platypus",
+        "perry": "geometry.platypus_perry"
+      },
+      "animations": {
+        "blink": "animation.fox.blink",
+        "idle": "animation.fox.idle",
+        "walk": "animation.fox.walk",
+        "look_at_target": "animation.common.look_at_target",
+        "baby_transform": "animation.fox.baby_transform",
+        "crouch": "animation.fox.crouch",
+        "sleep": "animation.fox_bma.sleeping",
+        "sit": "animation.fox.sit",
+        "wiggle": "animation.fox_bma.wiggle",
+        "stuck": "animation.fox.stuck",
+        "pounce": "animation.fox_bma.pounce",
+        "general": "controller.animation.fox.general"
+      },
+      "scripts": {
+        "animate": [
+          {
+            "blink": "!query.is_sleeping"
+          },
+          { "baby_transform": "query.is_baby" },
+          { "look_at_target": "!query.is_sleeping" },
+          "general"
+        ],
+        "pre_animation": [
+          "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
+        ]
+      },
+      "render_controllers": ["controller.render.fox"],
+      "spawn_egg": {
+        "texture": "spawn_egg",
+        "texture_index": 55
+      }
+    }
+  }
+}
