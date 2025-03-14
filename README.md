@@ -3,7 +3,11 @@
 🚀 **NEW UPDATE - VERSION 4.0 IS HERE!** 🚀  
 Enhance your Minecraft Bedrock experience with **Mob Variants v4.0**, a resource pack designed to bring **diversity and uniqueness** to every mob in the game!
 
-### 🌟 **What’s New in v4.0?**
+## 🎬 **Trailer on YouTube**
+
+[![YouTube](https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg)](https://www.youtube.com/watch?v=DJu-kk9uIDU)
+
+## 🌟 **What’s New in v4.0?**
 - **Permanent Variants (Optional Behaviour Pack!)**  
   - Keep mob appearances **consistent** for all players! No more random changes when reloading chunks.
   - Without the Behaviour Pack, skins will remain randomized per render.
@@ -16,7 +20,7 @@ Enhance your Minecraft Bedrock experience with **Mob Variants v4.0**, a resource
   - Some mobs come with **weapons, accessories, or unique animations**.
   - **Creepers** can spawn with **TNT in their abdomen** or even as "Hector Salamanca" from Breaking Bad!
 
-### 🎮 **Why Use Mob Variants v4.0?**
+## 🎮 **Why Use Mob Variants v4.0?**
 ✔ **More visual variety in mobs** – never see the same default skins again!  
 ✔ **Fully Vanilla-compatible** – no experimental features required.  
 ✔ **Perfect for servers & Realms** – works for all players without extra downloads.  
