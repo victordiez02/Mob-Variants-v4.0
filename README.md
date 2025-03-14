@@ -1,4 +1,4 @@
-# <img src="pack_icon.png" alt="Icon" height="30" /> Mob Variants v4.0 – A Texture Pack for Minecraft Bedrock
+# <img src="Mob%20Variants%20v4.0%20%5BRP%5D/pack_icon.png" alt="Icon" height="30" /> Mob Variants v4.0 – A Texture Pack for Minecraft Bedrock
 
 <div align="center">
   <img src="title.png" alt="Logo" height="100" />
