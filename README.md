@@ -1,4 +1,8 @@
-# Mob Variants v4.0 – A Texture Pack for Minecraft Bedrock
+# <img src="pack_icon.png" alt="Icon" height="30" /> Mob Variants v4.0 – A Texture Pack for Minecraft Bedrock
+
+<div align="center">
+  <img src="title.png" alt="Logo" height="100" />
+</div>
 
 🚀 **NEW UPDATE - VERSION 4.0 IS HERE!** 🚀  
 Enhance your Minecraft Bedrock experience with **Mob Variants v4.0**, a resource pack designed to bring **diversity and uniqueness** to every mob in the game!
