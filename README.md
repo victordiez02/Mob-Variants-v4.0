@@ -4,8 +4,15 @@
   <img src="https://private-user-images.githubusercontent.com/187178116/425814643-0be79887-646a-4be5-89ef-a39270bec811.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NDI3MjQ1MjIsIm5iZiI6MTc0MjcyNDIyMiwicGF0aCI6Ii8xODcxNzgxMTYvNDI1ODE0NjQzLTBiZTc5ODg3LTY0NmEtNGJlNS04OWVmLWEzOTI3MGJlYzgxMS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwMzIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDMyM1QxMDAzNDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0yM2ZmYjI1YjcxZTgyNTc1M2VhNzM2NmUzY2E2OTkxYjY0ZWEzODYxZGFiNTlhOWFkNjg4YzZiMTg5ODAyN2M1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.jDjqDRSSC8j3tTJpR_rpaTdPVklTxk8g8nX9vgwG-Jo" alt="Logo" height="100" />
 </div>
 
-🚀 **NEW UPDATE - VERSION 4.0 IS HERE!** 🚀  
-Enhance your Minecraft Bedrock experience with **Mob Variants v4.0**, a resource pack designed to bring **diversity and uniqueness** to every mob in the game!
+🎨 **A Whole New Level of Diversity for Minecraft Bedrock!** 🧩  
+Mob Variants is a texture pack designed to make your Minecraft world feel truly alive — adding hundreds of **new mob skins, models, attachables, and animations**, all carefully crafted to blend seamlessly with Minecraft’s vanilla aesthetic.
+
+😩 Tired of seeing the same mobs over and over again?  
+✨ Say goodbye to repetition! With:
+- 🔹 **400+ unique mob skins**
+- 🔹 **50+ brand-new models**
+- 🔹 **37,850+ possible combinations**  
+...you’ll rarely see the same mob twice again!
 
 ## 🎬 **Trailers on YouTube**
 
@@ -28,18 +35,43 @@ Enhance your Minecraft Bedrock experience with **Mob Variants v4.0**, a resource
 
 </div>
 
-## 🌟 **What’s New in v4.0?**
-- **Permanent Variants (Optional Behaviour Pack!)**  
-  - Keep mob appearances **consistent** for all players! No more random changes when reloading chunks.
-  - Without the Behaviour Pack, skins will remain randomized per render.
-- **New Models, Textures, and Animations!**  
-  - **Over 400 skins**, **50+ new models**, and **37,850+ possible combinations** for a more immersive world.
-  - Inspired by **Minecraft Dungeons**, with outfits like wizard, enchanter, and geomancer.
-  - **Special rare variants** like Clown Vindicator, Puss in Boots, and Golden Pig!
-- **New Dynamic Features**  
-  - Sniffers now spawn with **Torchflowers or Pitcher Flowers** that grow over time.
-  - Some mobs come with **weapons, accessories, or unique animations**.
-  - **Creepers** can spawn with **TNT in their abdomen** or even as "Hector Salamanca" from Breaking Bad!
+## 🛠️ **Choose how you want to play:**
+<div align="center">
+
+| 🧾 **Resource Pack only** | 🧾➕⚙️ **Resource Pack + Optional Behaviour Pack (BP)** <br><sub>✅ Recommended</sub> |
+|---------------------------|--------------------------------------------------------------------------------------|
+| Mobs appear with random variants each time they render. | Mob appearances are *fixed and consistent* for all players, even if you leave the area or reload the game. Perfect for multiplayer, roleplay, and mapmaking! |
+
+</div>
+
+✅ Fully vanilla-compatible (no experimental toggles)  
+✅ Works seamlessly on servers and Realms  
+✅ Other players don’t need to install anything!
+
+## 🚀 **Mob Variants – Now Better Than Ever in v4.0!** 🚀
+
+Mob Variants is a texture pack that transforms Minecraft Bedrock by adding **hundreds of unique mob skins**, **custom models**, and **dynamic features**, all while staying true to the vanilla style. Every update has added new layers of depth, variety, and polish to the experience.
+
+### 🆕 **v4.0 – The Biggest Update Yet**
+- Introduces an **optional Behaviour Pack** for consistent mob variants across all players.
+- Adds **Sniffers that spawn with growing flowers**, new **Evoker variants from Minecraft Dungeons**, and **rare special mobs** with ultra-low spawn chances — like golden zombies, chest pigs, and clown vindicators.
+- Improves existing mobs with visual refinements and bug fixes.
+
+### 🔁 **v3.0 – Dynamic Touches**
+- Added lot of mobs with **weapons, armor, and attachments**.
+- Added **random arrows, helmets, and props** to enhance realism.
+- Introduced **basic animations** and themed models like miners and archers.
+
+### 🌈 **v2.0 – Massive Variety**
+- Expanded to **over 200 skins**.
+- Included mobs inspired by **Minecraft Dungeons**.
+- Began experimenting with **rare variants** with new models, glowing textures and attachments.
+
+### 🎨 **v1.0 – The Beginning**
+- Core concept introduced: **visual variety for mobs** without changing gameplay.
+- Launched with **basic randomized skins** and full vanilla compatibility.
+
+Each version has pushed the boundaries of what mobs can look like — and **v4.0 brings it all together** in the most polished, dynamic version yet.
 
 ## 🎮 **Why Use Mob Variants v4.0?**
 ✔ **More visual variety in mobs** – never see the same default skins again!  
