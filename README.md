@@ -14,11 +14,15 @@ Mob Variants is a texture pack designed to make your Minecraft world feel truly 
 - 🔹 **37,850+ possible combinations**  
 ...you’ll rarely see the same mob twice again!
 
-## 🎬 **Trailers on YouTube**
+## <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" alt="YouTube" width="20"/> **Trailers on YouTube**
 
 <div align="center">
 
 <table>
+  <tr>
+    <th align="center">🎬 Trailer 1</th>
+    <th align="center">🎬 Trailer 2</th>
+  </tr>
   <tr>
     <td align="center">
       <a href="https://www.youtube.com/watch?v=DJu-kk9uIDU" target="_blank">
