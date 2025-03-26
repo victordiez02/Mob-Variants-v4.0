@@ -14,6 +14,16 @@ Mob Variants is a texture pack designed to make your Minecraft world feel truly 
 - 🔹 **37,850+ possible combinations**  
 ...you’ll rarely see the same mob twice again!
 
+## <img src="https://play-lh.googleusercontent.com/TceQB0Nblpisd_9lviAXli7-POotAtrx7E7RCMvBVZQkFntzOSQl94_xJkW3_14vSS0" alt="MCPEDL Logo" height="20" style="vertical-align:middle;"/> **Download it on MCPEDL**
+
+<div align="center">
+
+<a href="https://mcpedl.com/mobvariants/" target="_blank">
+  <img src="https://img.shields.io/badge/🚀%20Download%20Mob%20Variants-CLICK%20HERE-00A52E?style=for-the-badge" alt="Download on MCPEDL">
+</a>
+
+</div>
+
 ## <img src="https://raw.githubusercontent.com/maurodesouza/profile-readme-generator/master/src/assets/icons/social/youtube/default.svg" alt="YouTube" width="20"/> **Trailers on YouTube**
 
 <div align="center">
