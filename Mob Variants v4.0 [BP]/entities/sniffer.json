@@ -32,7 +32,7 @@
       "var_pitchflower_4": { "minecraft:mark_variant": { "value": 7 } },
 
       // Cambio de flor
-      "torchflower_change_1to2":{
+      "torchflower_change_1to2": {
         "minecraft:timer": {
           "time": [250, 350],
           "looping": false,
@@ -42,7 +42,7 @@
           }
         }
       },
-      "torchflower_change_2to3":{
+      "torchflower_change_2to3": {
         "minecraft:timer": {
           "time": [250, 350],
           "looping": false,
@@ -53,7 +53,7 @@
         }
       },
 
-      "pitchflower_change_1to2":{
+      "pitchflower_change_1to2": {
         "minecraft:timer": {
           "time": [200, 300],
           "looping": false,
@@ -63,7 +63,7 @@
           }
         }
       },
-      "pitchflower_change_2to3":{
+      "pitchflower_change_2to3": {
         "minecraft:timer": {
           "time": [200, 300],
           "looping": false,
@@ -73,7 +73,7 @@
           }
         }
       },
-      "pitchflower_change_3to4":{
+      "pitchflower_change_3to4": {
         "minecraft:timer": {
           "time": [200, 300],
           "looping": false,
@@ -84,18 +84,14 @@
         }
       },
 
-
       "sniffer_baby": {
-        "minecraft:is_baby": {
-        },
+        "minecraft:is_baby": {},
         "minecraft:scale": {
           "value": 0.45
         },
         "minecraft:ageable": {
           "duration": 2400,
-          "feed_items": [
-            "torchflower_seeds"
-          ],
+          "feed_items": ["torchflower_seeds"],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -123,16 +119,14 @@
               }
             }
           ],
-          "breed_items": [
-            "torchflower_seeds"
-          ]
+          "breed_items": ["torchflower_seeds"]
         }
       },
       "feeling_happy": {
         "minecraft:behavior.timer_flag_3": {
           "priority": 5,
           "cooldown_range": 0.0,
-          "duration_range": [ 2.0, 5.0 ],
+          "duration_range": [2.0, 5.0],
           "on_end": {
             "event": "on_feeling_happy_end",
             "target": "self"
@@ -142,9 +136,9 @@
       "stand_up": {
         "minecraft:behavior.timer_flag_2": {
           "priority": 2,
-          "control_flags": [ "move" ],
+          "control_flags": ["move"],
           "cooldown_range": 0.0,
-          "duration_range": [ 2.0, 5.0 ],
+          "duration_range": [2.0, 5.0],
           "on_end": {
             "event": "on_rising_end",
             "target": "self"
@@ -192,14 +186,10 @@
           "search_range_xz": 20.0,
           "search_range_y": 3,
           "cooldown_range": 0.0,
-          "digging_duration_range": [ 8.0, 10.0 ],
+          "digging_duration_range": [8.0, 10.0],
           "item_table": "loot_tables/gameplay/entities/sniffer_seeds.json",
           "spawn_item_after_seconds": 6.0,
           "spawn_item_pos_offset": 2.25,
-          "on_searching_start": {
-            "event": "on_searching_start",
-            "target": "self"
-          },
           "on_fail_during_searching": {
             "event": "on_fail_during_searching",
             "target": "self"
@@ -234,14 +224,12 @@
       "minecraft:behavior.tempt": {
         "priority": 4,
         "speed_multiplier": 1.25,
-        "items": [
-          "torchflower_seeds"
-        ]
+        "items": ["torchflower_seeds"]
       },
       "minecraft:behavior.timer_flag_1": {
         "priority": 6,
-        "control_flags": [ "move", "look" ],
-        "cooldown_range": [ 400.0, 500.0 ],
+        "control_flags": ["move", "look"],
+        "cooldown_range": [400.0, 500.0],
         "duration_range": 2.0,
         "on_end": {
           "event": "on_scenting_success",
@@ -277,19 +265,16 @@
         "hard_distance": 6.0,
         "max_distance": 10.0
       },
-      "minecraft:balloonable": {
-      },
+      "minecraft:balloonable": {},
       "minecraft:type_family": {
-        "family": [ "sniffer", "mob" ]
+        "family": ["sniffer", "mob"]
       },
-      "minecraft:is_hidden_when_invisible": {
-      },
+      "minecraft:is_hidden_when_invisible": {},
       "minecraft:breathable": {
         "total_supply": 15,
         "suffocate_time": 0
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:health": {
         "value": 14
       },
@@ -312,24 +297,18 @@
         "avoid_water": true,
         "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-      },
+      "minecraft:movement.basic": {},
       "minecraft:follow_range": {
         "value": 64.0
       },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:movement": {
         "value": 0.09
       },
-      "minecraft:persistent": {
-      },
-      "minecraft:physics": {
-      },
-      "minecraft:conditional_bandwidth_optimization": {
-      }
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
+      "minecraft:conditional_bandwidth_optimization": {}
     },
     "events": {
       "minecraft:entity_spawned": {
@@ -349,16 +328,35 @@
           },
           {
             "randomize": [
-              { "weight": 50, "add": { "component_groups": ["var_no_flower"] } },              
-              { "weight": 30, "add": { "component_groups": ["var_torchflower_1", "torchflower_change_1to2"] } },
-              { "weight": 20, "add": { "component_groups": ["var_pitchflower_1", "pitchflower_change_1to2"] } }
+              {
+                "weight": 50,
+                "add": { "component_groups": ["var_no_flower"] }
+              },
+              {
+                "weight": 30,
+                "add": {
+                  "component_groups": [
+                    "var_torchflower_1",
+                    "torchflower_change_1to2"
+                  ]
+                }
+              },
+              {
+                "weight": 20,
+                "add": {
+                  "component_groups": [
+                    "var_pitchflower_1",
+                    "pitchflower_change_1to2"
+                  ]
+                }
+              }
             ]
           },
           {
             "randomize": [
               {
                 "weight": 95,
-               "trigger": "minecraft:spawn_adult"
+                "trigger": "minecraft:spawn_adult"
               },
               {
                 "weight": 5,
@@ -366,122 +364,78 @@
               }
             ]
           }
-        ]        
+        ]
       },
-
 
       // Timer crecimiento Torchfloor
-      "torchflower_change_1to2_event":{
+      "torchflower_change_1to2_event": {
         "add": {
-          "component_groups": [
-            "var_torchflower_2",
-            "torchflower_change_2to3"
-          ]
+          "component_groups": ["var_torchflower_2", "torchflower_change_2to3"]
         },
         "remove": {
-          "component_groups": [
-            "var_torchflower_1",
-            "torchflower_change_1to2"
-          ]
+          "component_groups": ["var_torchflower_1", "torchflower_change_1to2"]
         }
       },
-      "torchflower_change_2to3_event":{
+      "torchflower_change_2to3_event": {
         "add": {
-          "component_groups": [
-            "var_torchflower_3"
-          ]
+          "component_groups": ["var_torchflower_3"]
         },
         "remove": {
-          "component_groups": [
-            "var_torchflower_2",
-            "torchflower_change_2to3"
-          ]
+          "component_groups": ["var_torchflower_2", "torchflower_change_2to3"]
         }
       },
 
-      "pitchflower_change_1to2_event":{
+      "pitchflower_change_1to2_event": {
         "add": {
-          "component_groups": [
-            "var_pitchflower_2",
-            "pitchflower_change_2to3"
-          ]
+          "component_groups": ["var_pitchflower_2", "pitchflower_change_2to3"]
         },
         "remove": {
-          "component_groups": [
-            "var_pitchflower_1",
-            "pitchflower_change_1to2"
-          ]
+          "component_groups": ["var_pitchflower_1", "pitchflower_change_1to2"]
         }
       },
-      "pitchflower_change_2to3_event":{
+      "pitchflower_change_2to3_event": {
         "add": {
-          "component_groups": [
-            "var_pitchflower_3",
-            "pitchflower_change_3to4"
-          ]
+          "component_groups": ["var_pitchflower_3", "pitchflower_change_3to4"]
         },
         "remove": {
-          "component_groups": [
-            "var_pitchflower_2",
-            "pitchflower_change_2to3"
-          ]
+          "component_groups": ["var_pitchflower_2", "pitchflower_change_2to3"]
         }
       },
-      "pitchflower_change_3to4_event":{
+      "pitchflower_change_3to4_event": {
         "add": {
-          "component_groups": [
-            "var_pitchflower_4"
-          ]
+          "component_groups": ["var_pitchflower_4"]
         },
         "remove": {
-          "component_groups": [
-            "var_pitchflower_3",
-            "pitchflower_change_3to4"
-          ]
+          "component_groups": ["var_pitchflower_3", "pitchflower_change_3to4"]
         }
       },
-
 
       "minecraft:spawn_adult": {
         "add": {
-          "component_groups": [
-            "sniffer_adult",
-            "pushable"
-          ]
+          "component_groups": ["sniffer_adult", "pushable"]
         }
       },
       "minecraft:entity_born": {
         "add": {
-          "component_groups": [
-            "sniffer_baby",
-            "pushable"
-          ]
+          "component_groups": ["sniffer_baby", "pushable"]
         }
       },
       "on_pregnant": {
         "add": {
-          "component_groups": [
-            "sniffer_pregnant"
-          ]
+          "component_groups": ["sniffer_pregnant"]
         }
       },
       "on_egg_spawned": {
         "remove": {
-          "component_groups": [
-            "sniffer_pregnant"
-          ]
+          "component_groups": ["sniffer_pregnant"]
         }
       },
       "minecraft:ageable_grow_up": {
         "remove": {
-          "component_groups": [
-            "sniffer_baby"
-          ]
+          "component_groups": ["sniffer_baby"]
         },
         "add": {
-          "component_groups": [
-            "sniffer_adult"
-          ]
+          "component_groups": ["sniffer_adult"]
         }
       },
       "on_scenting_success": {
@@ -494,72 +448,50 @@
               "value": "minecraft:is_baby"
             },
             "add": {
-              "component_groups": [
-                "sniffer_search_and_dig"
-              ]
+              "component_groups": ["sniffer_search_and_dig"]
             }
           }
         ]
       },
       "on_digging_start": {
         "remove": {
-          "component_groups": [
-            "pushable"
-          ]
+          "component_groups": ["pushable"]
         }
       },
       "on_item_found": {
         "add": {
-          "component_groups": [
-            "feeling_happy"
-          ]
+          "component_groups": ["feeling_happy"]
         }
       },
       "on_feeling_happy_end": {
         "remove": {
-          "component_groups": [
-            "feeling_happy"
-          ]
+          "component_groups": ["feeling_happy"]
         }
       },
       "on_fail_during_searching": {
         "remove": {
-          "component_groups": [
-            "sniffer_search_and_dig"
-          ]
+          "component_groups": ["sniffer_search_and_dig"]
         }
       },
       "on_fail_during_digging": {
         "remove": {
-          "component_groups": [
-            "sniffer_search_and_dig"
-          ]
+          "component_groups": ["sniffer_search_and_dig"]
         },
         "add": {
-          "component_groups": [
-            "pushable",
-            "stand_up"
-          ]
+          "component_groups": ["pushable", "stand_up"]
         }
       },
       "on_search_and_digging_success": {
         "remove": {
-          "component_groups": [
-            "sniffer_search_and_dig"
-          ]
+          "component_groups": ["sniffer_search_and_dig"]
         },
         "add": {
-          "component_groups": [
-            "pushable",
-            "stand_up"
-          ]
+          "component_groups": ["pushable", "stand_up"]
         }
       },
       "on_rising_end": {
         "remove": {
-          "component_groups": [
-            "stand_up"
-          ]
+          "component_groups": ["stand_up"]
         }
       }
     }

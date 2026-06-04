@@ -69,11 +69,7 @@
           "variable.tcos1 = (Math.cos(query.modified_distance_moved * 50.89333) * query.modified_move_speed) * 57.3;",
           "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
         ],
-        "animate": [
-          "root",
-          { "look_at_target": "query.is_alive" },
-          { "dead": "!query.is_alive" }
-        ],
+        "animate": ["root", { "look_at_target": "query.is_alive" }],
         "initialize": ["v.roll = math.random_integer(1, 5);"]
       },
       "animations": {
@@ -92,7 +88,6 @@
         "default_trans1": "animation.evoker.default_trans1",
         "default_trans2": "animation.evoker.default_trans2",
         "celebrate": "animation.evoker.celebrate",
-        "dead": "animation.custom_death",
         "dead1": "animation.evoker.dead1",
         "dead2": "animation.evoker.dead2",
         "dead3": "animation.evoker.dead3",

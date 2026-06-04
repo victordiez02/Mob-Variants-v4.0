@@ -30,7 +30,7 @@
 
       "minecraft:spider_stray_jockey": {
         "minecraft:addrider": {
-          "entity_type": "minecraft:skeleton.stray"
+          "entity_type": "minecraft:stray"
         },
         "minecraft:rideable": {
           "seat_count": 1,
@@ -43,7 +43,7 @@
 
       "minecraft:spider_wither_jockey": {
         "minecraft:addrider": {
-          "entity_type": "minecraft:skeleton.wither"
+          "entity_type": "minecraft:wither_skeleton"
         },
         "minecraft:rideable": {
           "seat_count": 1,

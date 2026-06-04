@@ -34,11 +34,21 @@
         "minecraft:behavior.hurt_by_target": {
           "priority": 2,
           "entity_types": {
-            "filters": { 
-                "all_of": [
-                  { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "player"},
-                  { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "creeper"}
-                ] 
+            "filters": {
+              "all_of": [
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "player"
+                },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "creeper"
+                }
+              ]
             }
           }
         }
@@ -53,7 +63,7 @@
               "any_of": [
                 { "test": "is_family", "subject": "other", "value": "mob" },
                 { "test": "is_family", "subject": "other", "value": "player" }
-              ] 
+              ]
             }
           }
         },
@@ -70,13 +80,11 @@
     },
 
     "components": {
-      "minecraft:is_hidden_when_invisible": {
-      },
+      "minecraft:is_hidden_when_invisible": {},
       "minecraft:type_family": {
-        "family": [ "irongolem", "mob" ]
+        "family": ["irongolem", "mob"]
       },
-      "minecraft:nameable": {
-      },
+      "minecraft:nameable": {},
       "minecraft:collision_box": {
         "width": 1.4,
         "height": 2.9
@@ -91,7 +99,12 @@
       "minecraft:hurt_on_condition": {
         "damage_conditions": [
           {
-            "filters": { "test": "in_lava", "subject": "self", "operator": "==", "value": true },
+            "filters": {
+              "test": "in_lava",
+              "subject": "self",
+              "operator": "==",
+              "value": true
+            },
             "cause": "lava",
             "damage_per_tick": 4
           }
@@ -105,13 +118,9 @@
         "avoid_water": true,
         "avoid_damage_blocks": true
       },
-      "minecraft:movement.basic": {
-        
-      },
-      "minecraft:jump.static": {
-      },
-      "minecraft:can_climb": {
-      },
+      "minecraft:movement.basic": {},
+      "minecraft:jump.static": {},
+      "minecraft:can_climb": {},
       "minecraft:interact": {
         "interactions": [
           {
@@ -173,9 +182,7 @@
         "preferred_path_blocks": [
           {
             "cost": 0,
-            "blocks": [
-              "grass_path"
-            ]
+            "blocks": ["grass_path"]
           },
           {
             "cost": 1,
@@ -337,7 +344,7 @@
               "cauldron",
               "barrel",
               "loom",
-              "stonecutter"
+              "stonecutter_block"
             ]
           }
         ]
@@ -349,9 +356,14 @@
           {
             "filters": {
               "all_of": [
-                { "test" :  "is_family", "subject" : "other", "value" :  "monster" },
-                { "test" :  "is_family", "subject" : "other", "operator": "!=", "value" :  "creeper" }
-              ] 
+                { "test": "is_family", "subject": "other", "value": "monster" },
+                {
+                  "test": "is_family",
+                  "subject": "other",
+                  "operator": "!=",
+                  "value": "creeper"
+                }
+              ]
             }
           }
         ]
@@ -377,9 +389,7 @@
       "minecraft:behavior.offer_flower": {
         "priority": 5,
         "filters": {
-          "all_of": [
-            { "test": "is_daytime", "value" : true }
-          ]
+          "all_of": [{ "test": "is_daytime", "value": true }]
         }
       },
       "minecraft:behavior.random_stroll": {
@@ -458,13 +468,16 @@
       "minecraft:behavior.hurt_by_target": {
         "priority": 2,
         "entity_types": {
-          "filters": { "test": "is_family", "subject": "other", "operator": "!=", "value": "creeper" }
+          "filters": {
+            "test": "is_family",
+            "subject": "other",
+            "operator": "!=",
+            "value": "creeper"
+          }
         }
       },
-      "minecraft:persistent": {
-      },
-      "minecraft:physics": {
-      },
+      "minecraft:persistent": {},
+      "minecraft:physics": {},
       "minecraft:pushable": {
         "is_pushable": true,
         "is_pushable_by_piston": true
@@ -472,8 +485,7 @@
       "minecraft:follow_range": {
         "value": 64
       },
-      "minecraft:conditional_bandwidth_optimization": {
-      }
+      "minecraft:conditional_bandwidth_optimization": {}
     },
 
     "events": {
@@ -496,7 +508,10 @@
               { "weight": 100, "add": { "component_groups": ["var_13"] } },
               { "weight": 100, "add": { "component_groups": ["var_14"] } },
               { "weight": 100, "add": { "component_groups": ["var_15"] } },
-              { "weight": 3, "add": { "component_groups": ["var_item_sorter"] } }             
+              {
+                "weight": 3,
+                "add": { "component_groups": ["var_item_sorter"] }
+              }
             ]
           },
           {
@@ -509,16 +524,12 @@
       },
       "minecraft:from_player": {
         "add": {
-          "component_groups": [
-            "minecraft:player_created"
-          ]
+          "component_groups": ["minecraft:player_created"]
         }
       },
       "minecraft:from_village": {
         "add": {
-          "component_groups": [
-            "minecraft:village_created"
-          ]
+          "component_groups": ["minecraft:village_created"]
         }
       }
     }

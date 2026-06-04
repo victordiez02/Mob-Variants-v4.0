@@ -236,7 +236,6 @@
                 "minecraft:trapped_chest",
                 "minecraft:ender_chest",
                 "minecraft:barrel",
-                "minecraft:shulker_box",
                 "minecraft:undyed_shulker_box"
               ],
               "on_block_broken": "important_block_destroyed_event"
@@ -583,7 +582,7 @@
           "minecraft:soul_fire",
           "minecraft:soul_lantern",
           "minecraft:soul_torch",
-          "minecraft:item.soul_campfire"
+          "minecraft:soul_campfire"
         ],
         "avoid_block_sound": "retreat",
         "sound_interval": {
@@ -758,7 +757,7 @@
             "stored_in_inventory": true
           },
           {
-            "item": "minecraft:horsearmorgold",
+            "item": "minecraft:golden_horse_armor",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,
@@ -923,7 +922,7 @@
             "stored_in_inventory": true
           },
           {
-            "item": "minecraft:speckled_melon",
+            "item": "minecraft:glistering_melon_slice",
             "priority": 2,
             "admire": true,
             "pickup_limit": 1,

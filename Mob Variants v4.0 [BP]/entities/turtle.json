@@ -51,7 +51,7 @@
         "minecraft:ageable": {
           "duration": 1200,
           "feed_items": ["seagrass"],
-          "drop_items": ["turtle_shell_piece"],
+          "drop_items": ["turtle_scute"],
           "grow_up": {
             "event": "minecraft:ageable_grow_up",
             "target": "self"
@@ -152,7 +152,7 @@
       "minecraft:damage_sensor": {
         "triggers": {
           "cause": "lightning",
-          "deals_damage": true,
+          "deals_damage": "yes",
           "damage_multiplier": 2000.0
         }
       },

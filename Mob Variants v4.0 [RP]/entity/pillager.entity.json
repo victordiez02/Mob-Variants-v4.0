@@ -11,7 +11,7 @@
         "default": "geometry.pillager",
         "empty": "geometry.zombie_empty",
         "helmet": "geometry.pillager_helmet"
-      },  
+      },
       "textures": {
         "default": "textures/entity/pillager",
         "default2": "textures/entity/pillager/pillager2",
@@ -46,15 +46,8 @@
           "variable.tcos1 = (Math.cos(query.modified_distance_moved * 50.89333) * query.modified_move_speed) * 57.3;",
           "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
         ],
-        "animate": [
-          "root",
-          "attack",
-          { "look_at_target": "query.is_alive" },
-          { "dead": "!query.is_alive" }
-        ],
-        "initialize": [
-          "v.roll = math.random_integer(1, 5);"
-        ]
+        "animate": ["root", "attack", { "look_at_target": "query.is_alive" }],
+        "initialize": ["v.roll = math.random_integer(1, 5);"]
       },
       "animations": {
         "root": "controller.animation.pillager.root",
@@ -71,15 +64,14 @@
         "crossbow_hold": "animation.pillager.crossbow_hold",
         "crossbow_charge": "animation.pillager.crossbow_charge",
         "celebrate": "animation.pillager.celebrate",
-        "dead": "animation.custom_death",
         "dead1": "animation.pillager.dead1",
         "dead2": "animation.pillager.dead2",
         "dead3": "animation.pillager.dead3",
         "dead4": "animation.pillager.dead4"
       },
       "render_controllers": [
-          "controller.render.pillager",
-          "controller.render.pillager_helmet"
+        "controller.render.pillager",
+        "controller.render.pillager_helmet"
       ],
       "spawn_egg": {
         "texture": "spawn_egg",

@@ -31,13 +31,9 @@
           "root",
           "nose",
           "attack",
-          { "look_at_target": "query.is_alive" },
-          { "dead": "!query.is_alive" }
+          { "look_at_target": "query.is_alive" }
         ],
-        "initialize": [
-          "v.roll = math.random_integer(1, 5);",
-          "v.fall = 0;"
-        ]
+        "initialize": ["v.roll = math.random_integer(1, 5);", "v.fall = 0;"]
       },
       "animations": {
         "root": "controller.animation.witch.root",
@@ -54,13 +50,12 @@
         "idle3": "animation.witch.idle3",
         "move_upper_body": "animation.witch.move_upper_body",
         "move_lower_body": "animation.witch.move_lower_body",
-        "dead": "animation.custom_death",
         "dead1": "animation.witch.dead1",
         "dead2": "animation.witch.dead2",
         "dead3": "animation.witch.dead3",
         "dead4": "animation.witch.dead4"
       },
-      "render_controllers": [ "controller.render.witch" ],
+      "render_controllers": ["controller.render.witch"],
       "spawn_egg": {
         "texture": "spawn_egg",
         "texture_index": 17

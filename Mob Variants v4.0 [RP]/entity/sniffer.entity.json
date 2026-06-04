@@ -32,7 +32,8 @@
         "search": "animation.sniffer.search",
         "dig": "animation.sniffer.dig",
         "stand_up": "animation.sniffer.stand_up",
-        "feeling_happy": "animation.sniffer.feeling_happy"
+        "feeling_happy": "animation.sniffer.feeling_happy",
+        "blink": "animation.wolf.blink"
       },
       "scripts": {
         "pre_animation": [
@@ -67,9 +68,6 @@
         },
         {
           "feeling_happy": "controller.animation.sniffer.feeling_happy"
-        },
-        {
-          "blink": "animation.wolf.blink"
         }
       ],
       "render_controllers": [

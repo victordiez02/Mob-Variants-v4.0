@@ -52,7 +52,6 @@
         "animate": [
           { "root": "v.fall == 0" },
           { "look_at_target": "query.is_alive && v.fall == 0" },
-          { "dead": "!query.is_alive" },
           "fall"
         ],
         "initialize": [
@@ -89,7 +88,6 @@
         "attack2": "animation.vindicator.attack2",
         "attack3": "animation.vindicator.attack3",
         "celebrate": "animation.vindicator.celebrate",
-        "dead": "animation.custom_death",
         "dead1": "animation.vindicator.dead1",
         "dead2": "animation.vindicator.dead2",
         "dead3": "animation.vindicator.dead3",

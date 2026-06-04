@@ -32,12 +32,7 @@
           "variable.tcos1 = (Math.cos(query.modified_distance_moved * 76.34) * query.modified_move_speed) * 57.3;",
           "variable.xvar = query.anim_time>0 ? variable.xvar : Math.random(0,99);"
         ],
-        "animate": [
-          "root",
-          "attack",
-          { "look_at_target": "query.is_alive" },
-          { "dead": "!query.is_alive" }
-        ],
+        "animate": ["root", "attack", { "look_at_target": "query.is_alive" }],
         "initialize": [
           "v.roll = math.random_integer(1, 5);",
           "v.attack_roll = 0;"
@@ -66,13 +61,12 @@
         "celebrate1": "animation.piglin.celebrate1",
         "celebrate2": "animation.piglin.celebrate2",
         "celebrate3": "animation.piglin.celebrate3",
-        "dead": "animation.custom_death",
         "dead1": "animation.piglin.dead1",
         "dead2": "animation.piglin.dead2",
         "dead3": "animation.piglin.dead3",
         "dead4": "animation.piglin.dead4"
       },
-      "render_controllers": [ "controller.render.piglin" ],
+      "render_controllers": ["controller.render.piglin"],
       "spawn_egg": {
         "base_color": "#995f40",
         "overlay_color": "#f9f3a4"
